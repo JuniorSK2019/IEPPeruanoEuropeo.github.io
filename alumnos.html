@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Intranet Alumno | Colegio Peruano Europeo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0056b3;
+      --accent: #007bff;
+      --sidebar-bg: #0b2149;
+      --sidebar-hover: #173a75;
+      --light-bg: #f5f7fa;
+      --text-dark: #2c3e50;
+      --shadow: rgba(0,0,0,0.15);
+    }
+    body { font-family: 'Montserrat', sans-serif; background: var(--light-bg); display:flex; }
+    .sidebar {
+      width: 260px; background: var(--sidebar-bg); height: 100vh; position: fixed; left:0; top:0;
+      padding: 25px 0; box-shadow: 2px 0 10px var(--shadow);
+    }
+    .sidebar .logo { text-align:center; margin-bottom:25px; }
+    .sidebar .logo img { width:150px; }
+    .sidebar ul { list-style:none; padding:0; }
+    .sidebar ul li a {
+      display:flex; align-items:center; color:white; padding:12px 20px; text-decoration:none;
+      transition:0.3s;
+    }
+    .sidebar ul li a:hover { background:var(--sidebar-hover); padding-left:30px; }
+    .sidebar ul li a i { margin-right:10px; }
+    main {
+      margin-left:260px; padding:40px 60px; width:100%; min-height:100vh;
+    }
+    header {
+      background: linear-gradient(90deg,var(--primary),var(--accent)); color:white; padding:18px 30px;
+      border-radius:12px; display:flex; justify-content:space-between; align-items:center;
+      box-shadow:0 4px 15px var(--shadow);
+    }
+    .section-content { display:none; margin-top:30px; }
+    .active-section { display:block; }
+    .card-custom {
+      background:white; padding:25px; border-radius:15px; box-shadow:0 6px 18px rgba(0,0,0,0.1);
+    }
+  </style>
+  <style>
+    /* --- RESPONSIVE DESIGN --- */
+
+    /* Sidebar responsivo */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100% !important;
+        height: auto !important;
+        position: relative !important;
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+      }
+      .sidebar a {
+        padding: 14px !important;
+        font-size: 14px !important;
+        display: inline-block !important;
+      }
+      .content {
+        margin-left: 0 !important;
+        padding: 15px !important;
+      }
+    }
+
+    /* Tarjetas responsivas */
+    @media (max-width: 768px) {
+      .card-container {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    /* Tablas responsivas */
+    .table-responsive {
+      overflow-x: auto;
+      width: 100%;
+      display: block;
+    }
+  </style>
+  <style>
+    /* --- ESTILOS GENERALES --- */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fa;
+    }
+
+    /* --- SIDEBAR --- */
+    .sidebar {
+      width: 260px;
+      height: 100vh;
+      background: #0a2342;
+      color: #fff;
+      position: fixed;
+      padding-top: 20px;
+      transition: 0.4s ease;
+    }
+
+    .sidebar a {
+      color: #fff;
+      display: block;
+      padding: 14px 20px;
+      font-size: 16px;
+      text-decoration: none;
+      border-left: 4px solid transparent;
+      transition: 0.3s;
+      white-space: nowrap;
+    }
+    .sidebar a:hover {
+      background: rgba(255,255,255,0.1);
+      border-left: 4px solid #5dade2;
+    }
+
+    /* --- CONTENIDO --- */
+    .content {
+      margin-left: 260px;
+      padding: 25px;
+      transition: 0.4s ease;
+    }
+
+    /* --- BOTÓN HAMBURGUESA (MÓVIL) --- */
+    .menu-btn {
+      display: none;
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      background: #0a2342;
+      color: #fff;
+      border: none;
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 20px;
+      z-index: 999;
+    }
+
+    /* --- RESPONSIVE COMPLETO PARA MOVIL --- */
+    @media (max-width: 768px) {
+      .sidebar {
+        left: -260px;
+        top: 0;
+        height: 100%;
+      }
+      .sidebar.active {
+        left: 0;
+      }
+      .menu-btn {
+        display: block;
+      }
+      .content {
+        margin-left: 0 !important;
+        padding-top: 70px !important;
+      }
+
+      /* Tarjetas responsivas */
+      .card-container {
+        display: grid;
+        gap: 15px;
+        grid-template-columns: 1fr !important;
+      }
+
+      /* Tablas responsivas */
+      .table-responsive {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="img/logo1.png" alt="logo" />
+      <h5 class="text-white mt-2">Alumno</h5>
+    </div>
+    <ul>
+      <li><a href="#" onclick="mostrar('inicio')"><i class="fas fa-home"></i>Inicio</a></li>
+      <li><a href="#" onclick="mostrar('notas')"><i class="fas fa-file-alt"></i>Mis Notas</a></li>
+      <li><a href="#" onclick="mostrar('cursos')"><i class="fas fa-book"></i>Mis Cursos</a></li>
+      <li><a href="#" onclick="mostrar('asistencias')"><i class="fas fa-calendar-check"></i>Asistencias</a></li>
+      <li><a href="#" onclick="mostrar('horario')"><i class="fas fa-clock"></i>Horario</a></li>
+      <li><a href="#" onclick="mostrar('tareas')"><i class="fas fa-tasks"></i>Tareas</a></li>
+      <li><a href="#" onclick="mostrar('comunicados')"><i class="fas fa-bullhorn"></i>Comunicados</a></li>
+      <li><a href="#" onclick="mostrar('perfil')"><i class="fas fa-user"></i>Mi Perfil</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <header>
+      <h3><i class="fas fa-user-graduate me-2"></i>Intranet del Alumno</h3>
+      <div><i class="fas fa-user-circle"></i> Alumno Registrado</div>
+    </header>
+
+    <!-- Inicio -->
+    <section id="inicio" class="section-content active-section">
+      <div class="card-custom">
+        <h4>Bienvenido a tu Intranet</h4>
+        <p>Aquí podrás visualizar tus notas, cursos, asistencias, tareas, comunicados y más.</p>
+      </div>
+    </section>
+
+    <!-- Notas -->
+    <section id="notas" class="section-content">
+      <div class="card-custom">
+        <h4>Mis Notas</h4>
+        <table class="table table-bordered mt-3">
+          <thead><tr><th>Curso</th><th>1er Bimestre</th><th>2do</th><th>3ro</th><th>4to</th><th>Promedio</th></tr></thead>
+          <tbody>
+            <tr><td>Matemática</td><td>18</td><td>17</td><td>19</td><td>18</td><td>18</td></tr>
+            <tr><td>Comunicación</td><td>16</td><td>15</td><td>17</td><td>18</td><td>16.5</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Cursos -->
+    <section id="cursos" class="section-content">
+      <div class="card-custom">
+        <h4>Mis Cursos</h4>
+        <ul class="list-group mt-3">
+          <li class="list-group-item">Matemática</li>
+          <li class="list-group-item">Comunicación</li>
+          <li class="list-group-item">Ciencia y Tecnología</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Asistencias -->
+    <section id="asistencias" class="section-content">
+      <div class="card-custom">
+        <h4>Asistencias</h4>
+        <table class="table mt-3">
+          <thead><tr><th>Fecha</th><th>Estado</th></tr></thead>
+          <tbody>
+            <tr><td>05/03/2025</td><td>Asistió</td></tr>
+            <tr><td>06/03/2025</td><td>Tardanza</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Horario -->
+    <section id="horario" class="section-content">
+      <div class="card-custom">
+        <h4>Horario Semanal</h4>
+        <img src="img/horario.png" class="img-fluid mt-3" />
+      </div>
+    </section>
+
+    <!-- Tareas -->
+    <section id="tareas" class="section-content">
+      <div class="card-custom">
+        <h4>Tareas Pendientes</h4>
+        <ul class="list-group mt-3">
+          <li class="list-group-item">Tarea de Matemática - Ecuaciones</li>
+          <li class="list-group-item">Ensayo de Comunicación</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Comunicados -->
+    <section id="comunicados" class="section-content">
+      <div class="card-custom">
+        <h4>Comunicados</h4>
+        <div class="alert alert-info mt-3">Reunión de apoderados - viernes 8:00am</div>
+      </div>
+    </section>
+
+    <!-- Perfil -->
+    <section id="perfil" class="section-content">
+      <div class="card-custom">
+        <h4>Mi Perfil</h4>
+        <p><strong>Nombre:</strong> Juan Pérez</p>
+        <p><strong>Grado:</strong> 3ro de Secundaria</p>
+        <p><strong>Email:</strong> juanperez@example.com</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function mostrar(id) {
+      document.querySelectorAll('.section-content').forEach(sec => sec.classList.remove('active-section'));
+      document.getElementById(id).classList.add('active-section');
+    }
+  </script>
+</body>
+</html>

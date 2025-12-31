@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Intranet - Colegio Tecnológico</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Montserrat:400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <style>
+    /* ==== LOGIN CARD ==== */
+    #intranet-login {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      padding: 50px 15px;
+      background: #f0f4f8;
+    }
+
+    #intranet-login .card {
+      background-color: rgba(255,255,255,0.95);
+      border-radius: 15px;
+      padding: 40px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    #intranet-login .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    #intranet-login form label {
+      font-weight: 600;
+      color: #054890bb; 
+      margin-bottom: 5px;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    #intranet-login form i {
+      color: #007bff;
+    }
+
+    #intranet-login form .form-control {
+      border-radius: 10px;
+      padding: 10px 15px;
+      border: 1px solid #d0d0d0;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    #intranet-login form .form-control:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 8px rgba(0,123,255,0.3);
+      transform: scale(1.01);
+    }
+
+    #intranet-login button {
+      background: linear-gradient(135deg, #007bff, #0056b3);
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 12px 0;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    #intranet-login button:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(0,123,255,0.4);
+    }
+
+    .login-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #054890;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .login-footer {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+
+    .login-footer a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .login-footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      #intranet-login {
+        padding: 30px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!--==========================
+  Header / Navbar
+  ============================-->
+  <header id="header" class="fixed-top">
+    <div class="container">
+      <div class="logo float-left">
+        <a href="index.html" class="scrollto">
+          <img src="img/logo.png" alt="" class="img-fluid">
+        </a>
+      </div>
+
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li><a href="index.html#intro">Inicio</a></li>
+          <li><a href="index.html#about">Nosotros</a></li>
+          <li><a href="index.html#niveles">Niveles Educativos</a></li>
+          <li><a href="index.html#why-us">Actividades</a></li>
+          <li><a href="index.html#team">Docentes</a></li>
+          <li class="drop-down"><a href="#">Más</a>
+            <ul>
+              <li><a href="index.html#admission">Admisión</a></li>
+              <li class="drop-down"><a href="#">Estudiantes</a>
+                <ul>
+                  <li><a href="index.html#reglamento">Reglamento</a></li>
+                  <li><a href="index.html#talleres">Talleres</a></li>
+                  <li><a href="index.html#biblioteca">Biblioteca</a></li>
+                  <li><a href="index.html#calendario">Calendario Escolar</a></li>
+                  <li><a href="index.html#consejeria">Consejería</a></li>
+                </ul>
+              </li>
+              <li><a href="index.html#padres">Padres de Familia</a></li>
+              <li><a href="index.html#noticias">Noticias</a></li>
+              <li><a href="index.html#galeria">Galería</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#contact">Contáctanos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!--==========================
+  Sección Login Intranet
+  ============================-->
+  <section id="intranet-login">
+    <div class="card wow animate__animated animate__fadeInUp">
+      <h3 class="login-title">Intranet Colegio Peruano Europeo</h3>
+      <form id="loginForm">
+        <div class="form-group">
+          <label><i class="fa fa-user"></i> Usuario</label>
+          <input type="text" class="form-control" name="username" id="username" placeholder="Ingresa tu usuario" required>
+        </div>
+        <div class="form-group">
+          <label><i class="fa fa-lock"></i> Contraseña</label>
+          <input type="password" class="form-control" name="password" id="password" placeholder="Ingresa tu contraseña" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mt-3">Iniciar Sesión</button>
+      </form>
+      <div class="login-footer">
+        <a href="#">¿Olvidaste tu contraseña?</a>
+      </div>
+    </div>
+  </section>
+
+  <!--==========================
+  Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-info">
+             <a href="#intro" class="scrollto">
+  <img src="img/logo1.png" alt="" class="img-fluid" style="max-width: 160px;">
+</a>
+            <p>
+              Somos una institución educativa comprometida con la formación integral de nuestros estudiantes,
+              promoviendo valores, conocimiento y responsabilidad social.
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Enlaces Útiles</h4>
+            <ul>
+              <li><a href="index.html#intro">Inicio</a></li>
+              <li><a href="index.html#about">Nosotros</a></li>
+              <li><a href="index.html#services">Servicios</a></li>
+              <li><a href="index.html#contact">Contáctanos</a></li>
+              <li><a href="#">Política de Privacidad</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contáctanos</h4>
+            <p>
+              Los Duraznos 267 <br>
+              Tarma, Junín - Perú<br><br>
+              <strong>Teléfono:</strong> +51 996 039 217<br>
+              <strong>Correo:</strong> admision@peruanoe.com<br>
+            </p>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Boletín Informativo</h4>
+            <p>Suscríbete y recibe nuestras noticias y comunicados institucionales.</p>
+            <form action="" method="post">
+              <input type="email" name="email" placeholder="Tu correo electrónico">
+              <input type="submit" value="Suscribirme">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+      <div class="container">
+    <div class="copyright">
+      &copy; Copyright <strong>I.E.P. Peruano Europeo</strong>. Todos los derechos reservados
+    </div>
+    <div class="credits">
+    </div>
+  </div>
+  </footer>
+
+  <!--==========================
+  Scripts
+  ============================-->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Login Script -->
+  <script>
+    // Usuario de prueba
+    const pruebaUsuario = "admin";
+    const pruebaPassword = "123456";
+
+    // Datos simulados de MATRICULA 2026
+    const matricula2026 = [
+      { nombre: "Juan Pérez", grado: "1° Primaria" },
+      { nombre: "María López", grado: "2° Primaria" },
+      { nombre: "Carlos Gómez", grado: "3° Primaria" },
+      { nombre: "Ana Torres", grado: "4° Primaria" }
+    ];
+
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if(username === pruebaUsuario && password === pruebaPassword){
+        // Guardamos los datos en sessionStorage para el dashboard
+        sessionStorage.setItem("matricula2026", JSON.stringify(matricula2026));
+        window.location.href = "dashboard.html";
+      } else {
+        alert("Usuario o contraseña incorrectos.");
+      }
+    });
+  </script>
+</body>
+</html>

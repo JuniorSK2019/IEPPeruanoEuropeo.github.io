@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Matrícula 2026 - Colegio Tecnológico</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Montserrat:400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <style>
+    /* ==== FORMULARIO MODERNO ==== */
+    #intro .card {
+      background-color: rgba(255,255,255,0.96);
+      border-radius: 15px;
+      border: none;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    #intro .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    #intro form label {
+      font-weight: 600;
+      color: #054890bb; 
+      margin-bottom: 5px;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    #intro form i {
+      color: #007bff;
+    }
+
+    #intro form .form-control {
+      border-radius: 10px;
+      padding: 10px 15px;
+      border: 1px solid #d0d0d0;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    #intro form .form-control:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 8px rgba(0,123,255,0.3);
+      transform: scale(1.01);
+    }
+
+    #intro button {
+      background: linear-gradient(135deg, #007bff, #0056b3);
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 12px 0;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    #intro button:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(0,123,255,0.4);
+    }
+
+    .motivacion {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 25px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+      animation: fadeIn 2s ease;
+      text-align: center; 
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Layout principal */
+    #intro .container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    #intro .info-matricula {
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+    }
+
+    #intro .info-matricula img {
+      max-width: 65%;
+      height: auto;
+      margin-top: 160px;
+    }
+
+    #intro .formulario {
+      flex: 1;
+      min-width: 340px;
+      margin-top: 60px; 
+      margin-left: 60px; 
+    }
+
+    @media (max-width: 768px) {
+      #intro .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      #intro .info-matricula img {
+        max-width: 70%;
+        margin-top: 0 !important;
+      }
+
+      #intro .formulario {
+        margin-left: 0;
+        margin-top: 15px;
+      }
+    }
+
+    /* Ajustes para subir el footer */
+    #intro {
+      padding-bottom: 200px;
+    }
+
+    #footer {
+      position: relative;
+      margin-top: -150px;
+      z-index: 10;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header id="header" class="fixed-top">
+    <div class="container">
+      <div class="logo float-left">
+        <a href="#intro" class="scrollto">
+          <img src="img/logo.png" alt="" class="img-fluid">
+        </a>
+      </div>
+
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li><a href="index - copia.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="niveleseducativos.html">Niveles Educativos</a></li>
+          <li><a href="actividades.html">Actividades</a></li>
+          <li><a href="index.html#team">Docentes</a></li>
+          <li class="drop-down"><a href="#">Más</a>
+            <ul>
+              <li><a href="index.html#admission">Admisión</a></li>
+              <li class="drop-down"><a href="#">Estudiantes</a>
+                <ul>
+                  <li><a href="index.html#reglamento">Reglamento</a></li>
+                  <li><a href="index.html#talleres">Talleres</a></li>
+                  <li><a href="index.html#biblioteca">Biblioteca</a></li>
+                  <li><a href="index.html#calendario">Calendario Escolar</a></li>
+                  <li><a href="index.html#consejeria">Consejería</a></li>
+                </ul>
+              </li>
+              <li><a href="index.html#padres">Padres de Familia</a></li>
+              <li><a href="index.html#noticias">Noticias</a></li>
+              <li><a href="index.html#galeria">Galería</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#contact">Contáctanos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sección de Matrícula -->
+  <section id="intro" class="d-flex align-items-center">
+    <div class="container">
+      <!-- IZQUIERDA -->
+      <div class="info-matricula text-center text-md-left">
+        <img src="img/Matricula.png" alt="Matrícula 2026" class="img-fluid wow animate__animated animate__fadeInDown">
+      </div>
+
+      <!-- DERECHA -->
+      <div class="formulario">
+        <p class="motivacion">
+          Regístrate y te contactaremos para brindarte toda la información sobre el proceso de admisión.
+        </p>
+        <div class="card wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+          <form id="matriculaForm">
+            <div class="form-row">
+              <div class="form-group col-md-12 text-left">
+                <label><i class="fa fa-user"></i> Nombres del apoderado *</label>
+                <input type="text" class="form-control" name="nombres" required>
+              </div>
+
+              <div class="form-group col-md-6 text-left">
+                <label><i class="fa fa-user"></i> Apellido paterno del apoderado*</label>
+                <input type="text" class="form-control" name="apellidoP" required>
+              </div>
+
+              <div class="form-group col-md-6 text-left">
+                <label><i class="fa fa-user"></i> Apellido materno del apoderado*</label>
+                <input type="text" class="form-control" name="apellidoM" required>
+              </div>
+
+              <div class="form-group col-md-6 text-left">
+                <label><i class="fa fa-id-card"></i> DNI / CE del apoderado *</label>
+                <input type="text" class="form-control" name="dni" required>
+              </div>
+
+              <div class="form-group col-md-6 text-left">
+                <label><i class="fa fa-phone"></i> Teléfono *</label>
+                <input type="tel" class="form-control" name="telefono" required>
+              </div>
+
+              <div class="form-group col-md-12 text-left">
+                <label><i class="fa fa-envelope"></i> Correo electrónico *</label>
+                <input type="email" class="form-control" name="email" required>
+              </div>
+
+              <div class="form-group col-md-6 text-left">
+                <label><i class="fa fa-university"></i> Nivel educativo *</label>
+                <select id="nivel" class="form-control" name="nivel" required>
+                  <option value="">Seleccione el nivel</option>
+                  <option value="inicial">Inicial</option>
+                  <option value="primaria">Primaria</option>
+                  <option value="secundaria">Secundaria</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6 text-left">
+                <label><i class="fa fa-book"></i> Grado *</label>
+                <select id="grado" class="form-control" name="grado" required>
+                  <option value="">Seleccione el grado</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block mt-3">¡Regístrate!</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 footer-info">
+             <a href="#intro" class="scrollto">
+              <img src="img/logo1.png" alt="" class="img-fluid" style="max-width: 160px;">
+             </a>
+            <p>
+              Somos una institución educativa comprometida con la formación integral de nuestros estudiantes,
+              promoviendo valores, conocimiento y responsabilidad social.
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Enlaces Útiles</h4>
+            <ul>
+              <li><a href="#hero">Inicio</a></li>
+              <li><a href="#about">Nosotros</a></li>
+              <li><a href="#services">Servicios</a></li>
+              <li><a href="#contact">Contáctanos</a></li>
+              <li><a href="#">Política de Privacidad</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contáctanos</h4>
+            <p>
+              Los Duraznos 267 <br>
+              Tarma, Junín - Perú<br><br>
+              <strong>Teléfono:</strong> +51 996 039 217<br>
+              <strong>Correo:</strong> admision@peruanoe.com<br>
+            </p>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Boletín Informativo</h4>
+            <p>Suscríbete y recibe nuestras noticias y comunicados institucionales.</p>
+            <form action="" method="post">
+              <input type="email" name="email" placeholder="Tu correo electrónico">
+              <input type="submit" value="Suscribirme">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>I.E.P. Peruano Europeo</strong>. Todos los derechos reservados
+      </div>
+      <div class="credits">
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/mobile-nav/mobile-nav.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <script src="contactform/contactform.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Firebase + Formulario -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-analytics.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBy90TiNqiM71I5CEwBZSBIVw3D0ruh648",
+      authDomain: "colegio-peruano-europeo.firebaseapp.com",
+      projectId: "colegio-peruano-europeo",
+      storageBucket: "colegio-peruano-europeo.firebasestorage.app",
+      messagingSenderId: "657920121015",
+      appId: "1:657920121015:web:072fc45325209862d81532",
+      measurementId: "G-BLVHVLLSLH"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app);
+
+    const form = document.getElementById('matriculaForm');
+    const gradoSelect = document.getElementById('grado');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const data = {
+        nombres: form.nombres.value,
+        apellidoP: form.apellidoP.value,
+        apellidoM: form.apellidoM.value,
+        dni: form.dni.value,
+        telefono: form.telefono.value,
+        email: form.email.value,
+        nivel: form.nivel.value,
+        grado: form.grado.value,
+        fecha: serverTimestamp()
+      };
+
+      try {
+        await addDoc(collection(db, "matriculas"), data);
+        alert("¡Registro guardado correctamente!");
+        form.reset();
+        gradoSelect.innerHTML = '<option value="">Seleccione el grado</option>';
+      } catch (error) {
+        console.error("Error al guardar: ", error);
+        alert("Ocurrió un error al guardar el registro.");
+      }
+    });
+
+    const nivelSelect = document.getElementById('nivel');
+    const opciones = {
+      inicial: ['3 años', '4 años', '5 años'],
+      primaria: ['1° Grado', '2° Grado', '3° Grado', '4° Grado', '5° Grado', '6° Grado'],
+      secundaria: ['1° Grado', '2° Grado', '3° Grado', '4° Grado', '5° Grado']
+    };
+
+    nivelSelect.addEventListener('change', function() {
+      const nivel = this.value;
+      gradoSelect.innerHTML = '<option value="">Seleccione el grado</option>';
+      if (opciones[nivel]) {
+        opciones[nivel].forEach(grado => {
+          const option = document.createElement('option');
+          option.value = grado;
+          option.textContent = grado;
+          gradoSelect.appendChild(option);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

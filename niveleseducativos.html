@@ -1,0 +1,2439 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>I.E.P. Peruano Europeo – Niveles Educativos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Tema principal -->
+  <link href="css/style.css" rel="stylesheet">
+
+<style>
+/* ======================================================================
+   ESTILOS MEJORADOS PARA CELULARES Y TARJETAS DIFERENCIADAS
+====================================================================== */
+
+/* Variables de colores por nivel */
+:root {
+  --color-inicial: #FF9800;
+  --color-primaria: #1976D2;
+  --color-secundaria: #2E7D32;
+  --color-oscuro: #0a2342;
+  --color-claro: #f8f9fa;
+  --sombra: 0 10px 30px rgba(0,0,0,0.1);
+  --transicion: all 0.3s ease;
+}
+
+/* ============================================
+   NAVBAR RESPONSIVE PARA CELULAR
+============================================ */
+@media (max-width: 991.98px) {
+  #header {
+    padding: 15px 0;
+  }
+  
+  #header .logo {
+    float: none;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  #header .logo img {
+    max-height: 50px;
+  }
+  
+  #header .main-nav {
+    display: none;
+  }
+  
+  /* Menú hamburguesa para móvil */
+  .mobile-nav-toggle {
+    display: block !important;
+    position: fixed;
+    right: 15px;
+    top: 20px;
+    z-index: 9998;
+    border: 0;
+    background: none;
+    font-size: 24px;
+    color: #0a2342;
+    cursor: pointer;
+  }
+  
+  .mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9997;
+    display: none;
+    overflow-y: auto;
+    padding-top: 70px;
+  }
+  
+  .mobile-nav.active {
+    display: block;
+  }
+  
+  .mobile-nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .mobile-nav > ul {
+    padding: 20px;
+  }
+  
+  .mobile-nav a {
+    display: block;
+    padding: 12px 15px;
+    color: #0a2342;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .mobile-nav a:hover,
+  .mobile-nav .active > a {
+    color: #1976D2;
+  }
+  
+  .mobile-nav .drop-down > a:after {
+    content: '\f078';
+    font-family: FontAwesome;
+    float: right;
+    transition: transform 0.3s;
+  }
+  
+  .mobile-nav .drop-down.active > a:after {
+    transform: rotate(180deg);
+  }
+  
+  .mobile-nav .drop-down ul {
+    display: none;
+    padding-left: 20px;
+    background: #f8f9fa;
+    margin: 10px 0;
+    border-radius: 5px;
+  }
+  
+  .mobile-nav .drop-down.active ul {
+    display: block;
+  }
+  
+  .mobile-nav .drop-down ul li a {
+    padding: 10px 15px;
+    font-size: 14px;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .mobile-nav .drop-down ul li:last-child a {
+    border-bottom: none;
+  }
+  
+  .mobile-nav .drop-down ul .drop-down ul {
+    padding-left: 15px;
+  }
+  
+  /* Cerrar móvil al hacer clic fuera */
+  .mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 9996;
+    display: none;
+  }
+  
+  .mobile-nav-overlay.active {
+    display: block;
+  }
+}
+
+/* Ocultar toggle en desktop */
+.mobile-nav-toggle {
+  display: none;
+}
+
+/* ============================================
+   ESTILOS PARA LAS TARJETAS DE NIVELES
+============================================ */
+
+.niveles-container {
+  padding: 20px 15px;
+}
+
+.nivel-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  transition: var(--transicion);
+  height: 100%;
+  border-top: 5px solid transparent;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nivel-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+/* Tarjeta Inicial */
+.inicial-card {
+  border-color: var(--color-inicial);
+}
+
+.inicial-card .card-img-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+/* REMOVIDO: .img-overlay eliminado */
+.inicial-card .nivel-tag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.95);
+  color: var(--color-inicial);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.inicial-card .card-content {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.inicial-card h4 {
+  color: var(--color-inicial);
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  padding-left: 20px;
+}
+
+.inicial-card h4::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 80%;
+  background: var(--color-inicial);
+  border-radius: 4px;
+}
+
+.inicial-card p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-family: 'Open Sans', sans-serif;
+  flex-grow: 1;
+}
+
+.inicial-card .features-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 25px;
+}
+
+.inicial-card .features-list li {
+  padding: 8px 0;
+  color: #555;
+  position: relative;
+  padding-left: 30px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.inicial-card .features-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-inicial);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.inicial-card .btn-nivel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-inicial);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transicion);
+  border: 2px solid transparent;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+.inicial-card .btn-nivel:hover {
+  background: white;
+  color: var(--color-inicial);
+  border-color: var(--color-inicial);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255,152,0,0.2);
+}
+
+/* Tarjeta Primaria */
+.primaria-card {
+  border-color: var(--color-primaria);
+}
+
+.primaria-card .card-img-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+/* REMOVIDO: .img-overlay eliminado */
+.primaria-card .nivel-tag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.95);
+  color: var(--color-primaria);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.primaria-card .card-content {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.primaria-card h4 {
+  color: var(--color-primaria);
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  padding-left: 20px;
+}
+
+.primaria-card h4::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 80%;
+  background: var(--color-primaria);
+  border-radius: 4px;
+}
+
+.primaria-card .btn-nivel {
+  background: var(--color-primaria);
+}
+
+.primaria-card .btn-nivel:hover {
+  background: white;
+  color: var(--color-primaria);
+  border-color: var(--color-primaria);
+  box-shadow: 0 10px 20px rgba(25,118,210,0.2);
+}
+
+.primaria-card .features-list li::before {
+  color: var(--color-primaria);
+}
+
+/* Tarjeta Secundaria */
+.secundaria-card {
+  border-color: var(--color-secundaria);
+}
+
+.secundaria-card .card-img-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+/* REMOVIDO: .img-overlay eliminado */
+.secundaria-card .nivel-tag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.95);
+  color: var(--color-secundaria);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.secundaria-card .card-content {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.secundaria-card h4 {
+  color: var(--color-secundaria);
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  padding-left: 20px;
+}
+
+.secundaria-card h4::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 80%;
+  background: var(--color-secundaria);
+  border-radius: 4px;
+}
+
+.secundaria-card .btn-nivel {
+  background: var(--color-secundaria);
+}
+
+.secundaria-card .btn-nivel:hover {
+  background: white;
+  color: var(--color-secundaria);
+  border-color: var(--color-secundaria);
+  box-shadow: 0 10px 20px rgba(46,125,50,0.2);
+}
+
+.secundaria-card .features-list li::before {
+  color: var(--color-secundaria);
+}
+
+/* Estilos generales para imágenes */
+.card-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.nivel-card:hover .card-img-container img {
+  transform: scale(1.05);
+}
+
+/* ============================================
+   ESTILOS RESPONSIVOS PARA CELULARES
+============================================ */
+
+@media (max-width: 768px) {
+  .niveles-container {
+    padding: 15px 10px;
+  }
+  
+  .section-header h3 {
+    font-size: 1.8rem !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .section-header p {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    padding: 0 10px;
+  }
+  
+  .nivel-card {
+    margin-bottom: 20px;
+    border-radius: 15px;
+  }
+  
+  .nivel-card .card-img-container {
+    height: 180px;
+  }
+  
+  .nivel-card .nivel-tag {
+    top: 15px;
+    right: 15px;
+    padding: 6px 15px;
+    font-size: 0.8rem;
+  }
+  
+  .nivel-card .card-content {
+    padding: 20px;
+  }
+  
+  .nivel-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    padding-left: 15px;
+  }
+  
+  .nivel-card h4::before {
+    width: 6px;
+  }
+  
+  .nivel-card p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+  
+  .nivel-card .features-list {
+    margin-bottom: 20px;
+  }
+  
+  .nivel-card .features-list li {
+    padding: 6px 0;
+    padding-left: 25px;
+    font-size: 0.9rem;
+  }
+  
+  .nivel-card .features-list li::before {
+    font-size: 1rem;
+  }
+  
+  .nivel-card .btn-nivel {
+    padding: 10px 25px;
+    font-size: 0.95rem;
+    max-width: 100%;
+  }
+  
+  /* Ajustes para los modales en celular */
+  .modal-content {
+    margin: 10px !important;
+    border-radius: 15px !important;
+    max-height: 95vh !important;
+  }
+  
+  .modal-header {
+    padding: 15px 20px !important;
+  }
+  
+  .modal-header h3 {
+    font-size: 1.3rem !important;
+  }
+  
+  .modal-header h3 i {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 1.2rem !important;
+    padding: 10px !important;
+  }
+  
+  .close-modal {
+    width: 35px !important;
+    height: 35px !important;
+    font-size: 1.3rem !important;
+    top: 15px !important;
+    right: 15px !important;
+  }
+  
+  .modal-nav {
+    padding: 10px 15px !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  
+  .modal-nav::-webkit-scrollbar {
+    display: none !important;
+  }
+  
+  .nav-item {
+    padding: 8px 15px !important;
+    font-size: 0.85rem !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .section-content {
+    padding: 15px !important;
+  }
+  
+  .info-grid, .price-cards {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+  
+  .info-item, .price-card {
+    padding: 15px !important;
+  }
+  
+  .price-amount {
+    font-size: 2.2rem !important;
+  }
+  
+  .table-responsive {
+    margin: 10px 0 !important;
+  }
+  
+  .table-custom {
+    font-size: 0.85rem !important;
+    min-width: 500px !important;
+  }
+  
+  .action-btn {
+    padding: 12px 25px !important;
+    font-size: 0.95rem !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .nivel-card .card-img-container {
+    height: 160px;
+  }
+  
+  .nivel-card .nivel-tag {
+    padding: 5px 12px;
+    font-size: 0.75rem;
+  }
+  
+  .nivel-card .card-content {
+    padding: 15px;
+  }
+  
+  .nivel-card h4 {
+    font-size: 1.4rem;
+  }
+  
+  .nivel-card p {
+    font-size: 0.9rem;
+  }
+  
+  .nivel-card .features-list li {
+    font-size: 0.85rem;
+  }
+  
+  .nivel-card .btn-nivel {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  /* Botón de llamada a la acción */
+  .text-center.mt-5 .btn-nivel {
+    padding: 12px 25px !important;
+    font-size: 0.95rem !important;
+    width: 100% !important;
+    max-width: 300px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    margin: 5px !important;
+  }
+  
+  .modal-header {
+    padding: 12px 15px !important;
+  }
+  
+  .modal-header h3 {
+    font-size: 1.2rem !important;
+  }
+  
+  .nav-item {
+    padding: 6px 12px !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .price-amount {
+    font-size: 2rem !important;
+  }
+}
+
+/* ============================================
+   ESTILOS PARA LOS MODALES (MANTENIDOS)
+============================================ */
+
+.modal-nivel {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(10, 35, 66, 0.98);
+  z-index: 99999;
+  overflow-y: auto;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  backdrop-filter: blur(10px);
+}
+
+.modal-nivel.show {
+  display: block;
+  opacity: 1;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 25px;
+  max-width: 1100px;
+  width: 100%;
+  margin: 40px auto;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+  animation: modalSlideIn 0.5s ease-out;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-header {
+  background: linear-gradient(135deg, #0a2342 0%, #0c3556 100%);
+  color: white;
+  padding: 25px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.modal-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.inicial-modal .modal-header::before { background: linear-gradient(90deg, var(--color-inicial), #FFB74D); }
+.primaria-modal .modal-header::before { background: linear-gradient(90deg, var(--color-primaria), #64B5F6); }
+.secundaria-modal .modal-header::before { background: linear-gradient(90deg, var(--color-secundaria), #66BB6A); }
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.modal-header h3 i {
+  font-size: 1.8rem;
+  background: rgba(255,255,255,0.15);
+  padding: 12px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-modal {
+  background: rgba(255,255,255,0.15);
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: var(--transicion);
+  border: 2px solid rgba(255,255,255,0.2);
+  flex-shrink: 0;
+}
+
+.close-modal:hover {
+  background: rgba(255,255,255,0.25);
+  transform: rotate(90deg);
+  border-color: rgba(255,255,255,0.4);
+}
+
+.modal-body {
+  padding: 0;
+  overflow-y: auto;
+  flex-grow: 1;
+  max-height: calc(90vh - 100px);
+}
+
+.modal-nav {
+  display: flex;
+  background: var(--color-claro);
+  padding: 15px 30px;
+  border-bottom: 2px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.modal-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-item {
+  padding: 12px 25px;
+  background: white;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicion);
+  border: 2px solid transparent;
+  color: #666;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-right: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nav-item.active {
+  background: var(--color-oscuro);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.inicial-modal .nav-item.active { background: var(--color-inicial); }
+.primaria-modal .nav-item.active { background: var(--color-primaria); }
+.secundaria-modal .nav-item.active { background: var(--color-secundaria); }
+
+.nav-item:hover:not(.active) {
+  background: #e9ecef;
+  transform: translateY(-1px);
+}
+
+.section-content {
+  display: none;
+  padding: 30px;
+  animation: fadeIn 0.4s ease;
+}
+
+.section-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.info-item {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  border-left: 4px solid var(--color-oscuro);
+  transition: var(--transicion);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.inicial-modal .info-item { border-color: var(--color-inicial); }
+.primaria-modal .info-item { border-color: var(--color-primaria); }
+.secundaria-modal .info-item { border-color: var(--color-secundaria); }
+
+.info-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.info-item h5 {
+  color: var(--color-oscuro);
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.info-item ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.info-item li {
+  padding: 8px 0;
+  color: #666;
+  position: relative;
+  padding-left: 25px;
+  line-height: 1.6;
+}
+
+.info-item li::before {
+  content: '•';
+  color: var(--color-oscuro);
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+}
+
+.inicial-modal .info-item li::before { color: var(--color-inicial); }
+.primaria-modal .info-item li::before { color: var(--color-primaria); }
+.secundaria-modal .info-item li::before { color: var(--color-secundaria); }
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 20px 0;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+.table-custom {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.table-custom thead {
+  background: linear-gradient(135deg, var(--color-oscuro) 0%, #0c3556 100%);
+  color: white;
+}
+
+.inicial-modal .table-custom thead { background: linear-gradient(135deg, var(--color-inicial) 0%, #FFB74D 100%); }
+.primaria-modal .table-custom thead { background: linear-gradient(135deg, var(--color-primaria) 0%, #64B5F6 100%); }
+.secundaria-modal .table-custom thead { background: linear-gradient(135deg, var(--color-secundaria) 0%, #66BB6A 100%); }
+
+.table-custom th {
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.table-custom td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #666;
+}
+
+.table-custom tr:hover td {
+  background: #f8f9fa;
+}
+
+.price-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.price-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border-top: 5px solid var(--color-oscuro);
+  transition: var(--transicion);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.inicial-modal .price-card { border-color: var(--color-inicial); }
+.primaria-modal .price-card { border-color: var(--color-primaria); }
+.secundaria-modal .price-card { border-color: var(--color-secundaria); }
+
+.price-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.price-card h5 {
+  color: var(--color-oscuro);
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.price-amount {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--color-oscuro);
+  margin: 15px 0;
+  line-height: 1;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.inicial-modal .price-amount { color: var(--color-inicial); }
+.primaria-modal .price-amount { color: var(--color-primaria); }
+.secundaria-modal .price-amount { color: var(--color-secundaria); }
+
+.price-details {
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+.badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.badge {
+  padding: 8px 15px;
+  background: #f0f0f0;
+  color: #555;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.inicial-modal .badge { background: #FFECB3; color: #E65100; }
+.primaria-modal .badge { background: #E3F2FD; color: #1565C0; }
+.secundaria-modal .badge { background: #E8F5E9; color: #2E7D32; }
+
+.highlight-box {
+  background: linear-gradient(135deg, var(--color-claro) 0%, #ffffff 100%);
+  padding: 25px;
+  border-radius: 15px;
+  margin: 30px 0;
+  border-left: 5px solid var(--color-oscuro);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.inicial-modal .highlight-box { border-color: var(--color-inicial); }
+.primaria-modal .highlight-box { border-color: var(--color-primaria); }
+.secundaria-modal .highlight-box { border-color: var(--color-secundaria); }
+
+.highlight-box h4 {
+  color: var(--color-oscuro);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.highlight-box ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.highlight-box li {
+  padding: 8px 0;
+  color: #666;
+  position: relative;
+  line-height: 1.6;
+}
+
+.highlight-box li::before {
+  content: '✓';
+  color: var(--color-oscuro);
+  position: absolute;
+  left: -20px;
+  font-weight: bold;
+}
+
+.inicial-modal .highlight-box li::before { color: var(--color-inicial); }
+.primaria-modal .highlight-box li::before { color: var(--color-primaria); }
+.secundaria-modal .highlight-box li::before { color: var(--color-secundaria); }
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 35px;
+  background: var(--color-oscuro);
+  color: white;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transicion);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.inicial-modal .action-btn { background: var(--color-inicial); }
+.primaria-modal .action-btn { background: var(--color-primaria); }
+.secundaria-modal .action-btn { background: var(--color-secundaria); }
+
+.action-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+/* Mantener estilos originales de la sección niveles */
+.niveles-section {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #f2f6f7 100%);
+  overflow: hidden;
+  padding: 80px 0 60px 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Asegurar que los modales estén sobre todo */
+.modal-nivel {
+  z-index: 99999 !important;
+}
+
+/* Estilos para la llamada a la acción */
+.text-center.mt-5 p {
+  color: #0a2342;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.text-center.mt-5 .btn-nivel {
+  background: #0a2342;
+  color: white;
+  padding: 12px 35px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transicion);
+  border: 2px solid transparent;
+  font-family: 'Montserrat', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-center.mt-5 .btn-nivel:hover {
+  background: white;
+  color: #0a2342;
+  border-color: #0a2342;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(10,35,66,0.2);
+}
+</style>
+</head>
+
+<body>
+
+<!-- ==========================================================
+     NAVBAR ORIGINAL CON ADAPTACIÓN PARA CELULAR
+=========================================================== -->
+<header id="header" class="fixed-top">
+  <div class="container">
+    <div class="logo float-left">
+      <a href="index - copia.html"><img src="img/logo.png" class="img-fluid"></a>
+    </div>
+
+    <!-- Botón hamburguesa para móvil -->
+    <button class="mobile-nav-toggle">
+      <i class="fa fa-bars"></i>
+    </button>
+
+    <nav class="main-nav float-right d-none d-lg-block">
+      <ul>
+        <li><a href="index - copia.html">Inicio</a></li>
+        <li class="active"><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="#niveles">Niveles Educativos</a></li>
+        <li><a href="actividades.html">Actividades</a></li>
+        <li><a href="intranetdemo.html">Intranet</a></li>
+        <li class="drop-down"><a href="#">Más</a>
+          <ul>
+            <li><a href="#">Admisión</a></li>
+            <li class="drop-down"><a href="#">Estudiantes</a>
+              <ul>
+                <li><a href="#">Reglamento</a></li>
+                <li><a href="#">Talleres</a></li>
+                <li><a href="#">Biblioteca</a></li>
+                <li><a href="#">Calendario Escolar</a></li>
+                <li><a href="#">Consejería</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Padres de Familia</a></li>
+            <li><a href="#">Noticias</a></li>
+            <li><a href="#">Galería</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contáctanos</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Menú móvil -->
+<nav class="mobile-nav">
+  <ul>
+    <li><a href="index - copia.html">Inicio</a></li>
+    <li class="active"><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="#niveles">Niveles Educativos</a></li>
+    <li><a href="actividades.html">Actividades</a></li>
+    <li><a href="intranetdemo.html">Intranet</a></li>
+    <li class="drop-down"><a href="#">Más <i class="fa fa-chevron-down"></i></a>
+      <ul>
+        <li><a href="#">Admisión</a></li>
+        <li class="drop-down"><a href="#">Estudiantes <i class="fa fa-chevron-down"></i></a>
+          <ul>
+            <li><a href="#">Reglamento</a></li>
+            <li><a href="#">Talleres</a></li>
+            <li><a href="#">Biblioteca</a></li>
+            <li><a href="#">Calendario Escolar</a></li>
+            <li><a href="#">Consejería</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Padres de Familia</a></li>
+        <li><a href="#">Noticias</a></li>
+        <li><a href="#">Galería</a></li>
+      </ul>
+    </li>
+    <li><a href="#contact">Contáctanos</a></li>
+  </ul>
+</nav>
+
+<div class="mobile-nav-overlay"></div>
+
+<!--==========================
+  NIVELES EDUCATIVOS - TARJETAS MEJORADAS
+===========================-->
+<section id="niveles" class="niveles-section">
+  <div class="container niveles-container">
+    
+    <!-- Encabezado -->
+    <header class="section-header text-center">
+      <h3 class="wow fadeInDown" data-wow-duration="1.2s">
+        Nuestros Niveles Educativos
+      </h3>
+      <p class="wow fadeInUp" data-wow-delay="0.3s">
+        Ofrecemos una educación integral adaptada a cada etapa del desarrollo, combinando innovación pedagógica, 
+        tecnología avanzada y formación en valores para preparar a nuestros estudiantes para los retos del futuro.
+      </p>
+    </header>
+
+    <!-- Contenedor de niveles -->
+    <div class="row justify-content-center align-items-stretch">
+      
+      <!-- NIVEL INICIAL -->
+      <div class="col-lg-4 col-md-6 mb-4 wow zoomIn" data-wow-delay="0.2s">
+        <div class="nivel-card inicial-card">
+          <div class="card-img-container">
+            <!-- REMOVIDO: div.img-overlay eliminado -->
+            <img src="img/inicial.png" alt="Nivel Inicial" class="img-fluid">
+            <div class="nivel-tag">3-5 años</div>
+          </div>
+          
+          <div class="card-content">
+            <h4>INICIAL</h4>
+            <p>Despertamos la curiosidad y creatividad en un ambiente seguro y estimulante donde cada niño descubre el mundo a través del juego y la exploración guiada.</p>
+            
+            <ul class="features-list">
+              <li>Ambiente seguro y estimulante</li>
+              <li>Desarrollo socioemocional</li>
+              <li>Aprendizaje lúdico y creativo</li>
+              <li>Psicomotricidad fina y gruesa</li>
+            </ul>
+            
+            <div class="text-center">
+              <a href="#" class="btn-nivel" onclick="abrirModal('modalInicial'); return false;">
+                <i class="fa fa-child me-2"></i> Descubre más
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- NIVEL PRIMARIA -->
+      <div class="col-lg-4 col-md-6 mb-4 wow zoomIn" data-wow-delay="0.4s">
+        <div class="nivel-card primaria-card">
+          <div class="card-img-container">
+            <!-- REMOVIDO: div.img-overlay eliminado -->
+            <img src="img/primaria.jpg" alt="Nivel Primaria" class="img-fluid">
+            <div class="nivel-tag">6-11 años</div>
+          </div>
+          
+          <div class="card-content">
+            <h4>PRIMARIA</h4>
+            <p>Construimos bases sólidas para el aprendizaje permanente, fomentando el pensamiento crítico, la responsabilidad y el trabajo colaborativo.</p>
+            
+            <ul class="features-list">
+              <li>Pensamiento crítico y creativo</li>
+              <li>Lectura comprensiva avanzada</li>
+              <li>Tecnología educativa integrada</li>
+              <li>Valores y responsabilidad social</li>
+            </ul>
+            
+            <div class="text-center">
+              <a href="#" class="btn-nivel" onclick="abrirModal('modalPrimaria'); return false;">
+                <i class="fa fa-book me-2"></i> Descubre más
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- NIVEL SECUNDARIA -->
+      <div class="col-lg-4 col-md-6 mb-4 wow zoomIn" data-wow-delay="0.6s">
+        <div class="nivel-card secundaria-card">
+          <div class="card-img-container">
+            <!-- REMOVIDO: div.img-overlay eliminado -->
+            <img src="img/secundaria.jpg" alt="Nivel Secundaria" class="img-fluid">
+            <div class="nivel-tag">12-16 años</div>
+          </div>
+          
+          <div class="card-content">
+            <h4>SECUNDARIA</h4>
+            <p>Preparamos jóvenes autónomos y competentes para la educación superior y el mundo laboral, con enfoque en innovación, liderazgo y ciudadanía global.</p>
+            
+            <ul class="features-list">
+              <li>Preparación universitaria</li>
+              <li>Liderazgo y emprendimiento</li>
+              <li>Tecnología y programación</li>
+              <li>Orientación vocacional</li>
+            </ul>
+            
+            <div class="text-center">
+              <a href="#" class="btn-nivel" onclick="abrirModal('modalSecundaria'); return false;">
+                <i class="fa fa-graduation-cap me-2"></i> Descubre más
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- Llamada a la acción -->
+    <div class="text-center mt-5 wow fadeInUp" data-wow-delay="0.8s">
+      <p class="mb-4">
+        ¿Interesado en conocer más sobre nuestro proyecto educativo?
+      </p>
+      <a href="#contact" class="btn-nivel">
+        <i class="fa fa-calendar me-2"></i> Solicita una visita
+      </a>
+    </div>
+    
+  </div>
+</section>
+
+<!-- MODAL NIVEL INICIAL MEJORADO -->
+<div id="modalInicial" class="modal-nivel inicial-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3><i class="fa fa-child"></i> Nivel Inicial 2026</h3>
+      <div class="close-modal" onclick="cerrarModal('modalInicial')">×</div>
+    </div>
+    
+    <div class="modal-nav">
+      <div class="nav-item active" data-section="info-inicial">
+        <i class="fa fa-info-circle"></i> Información
+      </div>
+      <div class="nav-item" data-section="cursos-inicial">
+        <i class="fa fa-graduation-cap"></i> Plan de Estudios
+      </div>
+      <div class="nav-item" data-section="textos-inicial">
+        <i class="fa fa-book"></i> Textos Escolares
+      </div>
+      <div class="nav-item" data-section="costos-inicial">
+        <i class="fa fa-money"></i> Costos
+      </div>
+      <div class="nav-item" data-section="requisitos-inicial">
+        <i class="fa fa-clipboard"></i> Requisitos
+      </div>
+    </div>
+    
+    <div class="modal-body">
+      
+      <!-- Sección Información -->
+      <div class="section-content active" id="info-inicial">
+        <h4 class="mb-4"><i class="fa fa-star"></i> Información General</h4>
+        
+        <div class="info-grid">
+          <div class="info-item">
+            <h5><i class="fa fa-users"></i> Edades</h5>
+            <ul>
+              <li>Inicial 3 años</li>
+              <li>Inicial 4 años</li>
+              <li>Inicial 5 años</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-clock-o"></i> Horario</h5>
+            <ul>
+              <li>8:00 am - 1:00 pm</li>
+              <li>Lunes a Viernes</li>
+              <li>Inicio: 02 Marzo 2026</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-graduation-cap"></i> Metodología</h5>
+            <ul>
+              <li>Aprendizaje lúdico</li>
+              <li>Estimulación temprana</li>
+              <li>Psicomotricidad</li>
+              <li>Juego dirigido</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-heart"></i> Beneficios</h5>
+            <ul>
+              <li>Ambiente seguro</li>
+              <li>Talleres creativos</li>
+              <li>Inglés desde 3 años</li>
+              <li>Computación infantil</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="highlight-box">
+          <h4><i class="fa fa-lightbulb-o"></i> Propuesta Educativa</h4>
+          <p>Desarrollamos habilidades sociales, emocionales y cognitivas a través del juego y la exploración guiada. Fomentamos la autonomía, creatividad y curiosidad en un ambiente seguro y estimulante.</p>
+        </div>
+      </div>
+      
+      <!-- Sección Plan de Estudios -->
+      <div class="section-content" id="cursos-inicial">
+        <h4 class="mb-4"><i class="fa fa-graduation-cap"></i> Plan de Estudios 2026</h4>
+        
+        <div class="table-responsive">
+          <table class="table-custom">
+            <thead>
+              <tr>
+                <th>ÁREA CURRICULAR</th>
+                <th>CONTENIDO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>MATEMÁTICA</td><td>Aritmética, Geometría, Raz. Matemático</td></tr>
+              <tr><td>COMUNICACIÓN</td><td>Comunicación, Raz. Verbal, Plan Lector</td></tr>
+              <tr><td>PERSONAL SOCIAL</td><td>Personal Social, Educación Religiosa</td></tr>
+              <tr><td>CIENCIA Y TECNOLOGÍA</td><td>Ciencia y Tecnología, Computación</td></tr>
+              <tr><td>IDIOMA EXTRANJERO</td><td>Inglés</td></tr>
+              <tr><td>PSICOMOTRICIDAD</td><td>Atletismo, Fútbol, Voley, Basquet</td></tr>
+              <tr><td>TALLERES BIMESTRALES</td><td>Pintura, Teatro, Música, Mini Chef</td></tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="info-item mt-4">
+          <h5><i class="fa fa-calendar"></i> Distribución por Edad</h5>
+          <ul>
+            <li><strong>3 años:</strong> Preescritura y aprestamiento</li>
+            <li><strong>4 años:</strong> Iniciación a lectura y matemática</li>
+            <li><strong>5 años:</strong> Consolidación para primaria</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Sección Textos Escolares -->
+      <div class="section-content" id="textos-inicial">
+        <h4 class="mb-4"><i class="fa fa-book"></i> Textos Escolares</h4>
+        
+        <div class="info-grid">
+          <div class="info-item">
+            <h5><i class="fa fa-child"></i> Inicial 3 años</h5>
+            <p><strong>Total: 11 textos</strong></p>
+            <div class="badge-container">
+              <span class="badge">Comunicación</span>
+              <span class="badge">Raz. Verbal</span>
+              <span class="badge">Plan Lector</span>
+              <span class="badge">Motor Fino</span>
+              <span class="badge">Preescritura</span>
+              <span class="badge">Matemática</span>
+              <span class="badge">Raz. Matemático</span>
+              <span class="badge">Inglés</span>
+              <span class="badge">Personal Social</span>
+              <span class="badge">Ciencia y Tecnología</span>
+              <span class="badge">Computación</span>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-child"></i> Inicial 4 años</h5>
+            <p><strong>Total: 11 textos</strong></p>
+            <div class="badge-container">
+              <span class="badge">Comunicación</span>
+              <span class="badge">Raz. Verbal</span>
+              <span class="badge">Plan Lector</span>
+              <span class="badge">Motor Fino</span>
+              <span class="badge">Aprestamiento</span>
+              <span class="badge">Matemática</span>
+              <span class="badge">Raz. Matemático</span>
+              <span class="badge">Inglés</span>
+              <span class="badge">Personal Social</span>
+              <span class="badge">Ciencia y Tecnología</span>
+              <span class="badge">Computación</span>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-graduation-cap"></i> Inicial 5 años</h5>
+            <p><strong>Total: 12 textos</strong></p>
+            <div class="badge-container">
+              <span class="badge">Comunicación I</span>
+              <span class="badge">Comunicación II</span>
+              <span class="badge">Raz. Verbal</span>
+              <span class="badge">Plan Lector</span>
+              <span class="badge">Caligrafía</span>
+              <span class="badge">Matemática I</span>
+              <span class="badge">Matemática II</span>
+              <span class="badge">Raz. Matemático</span>
+              <span class="badge">Inglés</span>
+              <span class="badge">Personal Social</span>
+              <span class="badge">Ciencia y Tecnología</span>
+              <span class="badge">Computación</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sección Costos -->
+      <div class="section-content" id="costos-inicial">
+        <h4 class="mb-4"><i class="fa fa-money"></i> Costos de Matrícula 2026</h4>
+        
+        <div class="price-cards">
+          <div class="price-card">
+            <h5>Matrícula Anual</h5>
+            <div class="price-amount">S/. 310<span>.00</span></div>
+            <p class="price-details">Pago único al inicio del año escolar<br>Incluye materiales básicos</p>
+          </div>
+          
+          <div class="price-card">
+            <h5>Pensión Mensual</h5>
+            <div class="price-amount">S/. 310<span>.00</span></div>
+            <p class="price-details">10 cuotas mensuales<br>Marzo a Diciembre</p>
+          </div>
+          
+          <div class="price-card">
+            <h5>Total Anual</h5>
+            <div class="price-amount">S/. 3,410<span>.00</span></div>
+            <p class="price-details">Matrícula + 10 pensiones<br>Modalidad presencial</p>
+          </div>
+        </div>
+        
+        <div class="highlight-box">
+          <h4><i class="fa fa-percent"></i> Descuentos Disponibles</h4>
+          <ul>
+            <li>15% descuento por hermanos</li>
+            <li>10% descuento por pago anual anticipado</li>
+            <li>5% descuento hijos de ex-alumnos</li>
+            <li>Matrícula gratis para trillizos</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Sección Requisitos -->
+      <div class="section-content" id="requisitos-inicial">
+        <h4 class="mb-4"><i class="fa fa-clipboard"></i> Requisitos de Matrícula</h4>
+        
+        <div class="info-grid">
+          <div class="info-item">
+            <h5><i class="fa fa-id-card"></i> Documentación Personal</h5>
+            <ul>
+              <li>Partida de nacimiento original</li>
+              <li>D.N.I. copia legalizada del alumno</li>
+              <li>Copia simple D.N.I. de los padres</li>
+              <li>2 fotografías tamaño carnet</li>
+              <li>Copia seguro médico</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-medkit"></i> Salud</h5>
+            <ul>
+              <li>Copia tarjeta de vacunas MINSA</li>
+              <li>Perfil psicológico (proporcionado)</li>
+              <li>Certificado médico de salud</li>
+              <li>Declaración jurada de salud</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-file-text"></i> Documentos Escolares</h5>
+            <ul>
+              <li>Ficha única de matrícula (SIAGIE)</li>
+              <li>Certificado de estudios (si aplica)</li>
+              <li>Resolución de traslado (si aplica)</li>
+              <li>Boleta de notas (si aplica)</li>
+              <li>01 mica tamaño A4</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-info-circle"></i> Información Adicional</h5>
+            <ul>
+              <li>Ficha personal (solicitar en secretaría)</li>
+              <li>Contrato de servicios educativos</li>
+              <li>Reglamento interno firmado</li>
+              <li>Autorizaciones varias</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="text-center mt-4">
+          <button class="action-btn" onclick="cerrarModal('modalInicial')">
+            <i class="fa fa-check"></i> Entendido
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- MODAL NIVEL PRIMARIA MEJORADO -->
+<div id="modalPrimaria" class="modal-nivel primaria-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3><i class="fa fa-book"></i> Nivel Primaria 2026</h3>
+      <div class="close-modal" onclick="cerrarModal('modalPrimaria')">×</div>
+    </div>
+    
+    <div class="modal-nav">
+      <div class="nav-item active" data-section="info-primaria">
+        <i class="fa fa-info-circle"></i> Información
+      </div>
+      <div class="nav-item" data-section="cursos-primaria">
+        <i class="fa fa-graduation-cap"></i> Plan de Estudios
+      </div>
+      <div class="nav-item" data-section="textos-primaria">
+        <i class="fa fa-book"></i> Textos Escolares
+      </div>
+      <div class="nav-item" data-section="tecnologia-primaria">
+        <i class="fa fa-laptop"></i> Tecnología
+      </div>
+      <div class="nav-item" data-section="costos-primaria">
+        <i class="fa fa-money"></i> Costos
+      </div>
+    </div>
+    
+    <div class="modal-body">
+      
+      <!-- Sección Información -->
+      <div class="section-content active" id="info-primaria">
+        <h4 class="mb-4"><i class="fa fa-star"></i> Información General</h4>
+        
+        <div class="info-grid">
+          <div class="info-item">
+            <h5><i class="fa fa-users"></i> Grados</h5>
+            <ul>
+              <li>1° a 6° grado</li>
+              <li>6 a 11 años</li>
+              <li>Ratio: 25 alumnos/aula</li>
+              <li>Tutoría personalizada</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-clock-o"></i> Horario</h5>
+            <ul>
+              <li>7:30 am - 2:30 pm</li>
+              <li>Lunes a Viernes</li>
+              <li>Inicio: 02 Marzo 2026</li>
+              <li>Talleres extracurriculares</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-graduation-cap"></i> Metodología</h5>
+            <ul>
+              <li>Aprendizaje por proyectos</li>
+              <li>Trabajo colaborativo</li>
+              <li>Pensamiento crítico</li>
+              <li>Evaluación continua</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-trophy"></i> Logros</h5>
+            <ul>
+              <li>Olimpiadas matemáticas</li>
+              <li>Certificación inglés</li>
+              <li>Concursos de lectura</li>
+              <li>Proyectos científicos</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="highlight-box">
+          <h4><i class="fa fa-lightbulb-o"></i> Propuesta Educativa</h4>
+          <p>Desarrollamos competencias académicas sólidas combinadas con formación en valores. Implementamos tecnología educativa de vanguardia con robótica, programación e inteligencia artificial desde los primeros grados.</p>
+        </div>
+      </div>
+      
+      <!-- Sección Plan de Estudios -->
+      <div class="section-content" id="cursos-primaria">
+        <h4 class="mb-4"><i class="fa fa-graduation-cap"></i> Plan de Estudios 2026</h4>
+        
+        <div class="table-responsive">
+          <table class="table-custom">
+            <thead>
+              <tr>
+                <th>ÁREA</th>
+                <th>1°-2°-3°</th>
+                <th>4°</th>
+                <th>5°-6°</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Matemática</td><td>10 hrs</td><td>9 hrs</td><td>9 hrs</td></tr>
+              <tr><td>Comunicación</td><td>10 hrs</td><td>8 hrs</td><td>8 hrs</td></tr>
+              <tr><td>Personal Social</td><td>2 hrs</td><td>4 hrs</td><td>4 hrs</td></tr>
+              <tr><td>Ciencia y Tecnología</td><td>2 hrs</td><td>3 hrs</td><td>3 hrs</td></tr>
+              <tr><td>Inglés</td><td>2 hrs</td><td>2 hrs</td><td>2 hrs</td></tr>
+              <tr><td>Educación Física</td><td>2 hrs</td><td>2 hrs</td><td>2 hrs</td></tr>
+              <tr><td>Computación</td><td>1 hr</td><td>1 hr</td><td>1 hr</td></tr>
+              <tr><td>Robótica</td><td>1 hr</td><td>1 hr</td><td>1 hr</td></tr>
+              <tr><td>Arte y Cultura</td><td>2 hrs</td><td>2 hrs</td><td>2 hrs</td></tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="info-item mt-4">
+          <h5><i class="fa fa-bullseye"></i> Objetivos por Ciclo</h5>
+          <ul>
+            <li><strong>Ciclo I (1°-2°):</strong> Lectoescritura y cálculo básico</li>
+            <li><strong>Ciclo II (3°-4°):</strong> Consolidación y profundización</li>
+            <li><strong>Ciclo III (5°-6°):</strong> Preparación para secundaria</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Sección Textos Escolares -->
+      <div class="section-content" id="textos-primaria">
+        <h4 class="mb-4"><i class="fa fa-book"></i> Textos Escolares</h4>
+        
+        <div class="info-grid">
+          <div class="info-item">
+            <h5><i class="fa fa-graduation-cap"></i> 1°-2°-3° Grado</h5>
+            <p><strong>Total: 14 textos</strong></p>
+            <div class="badge-container">
+              <span class="badge">Aritmética</span>
+              <span class="badge">Álgebra</span>
+              <span class="badge">Geometría</span>
+              <span class="badge">Raz. Matemático</span>
+              <span class="badge">Lenguaje</span>
+              <span class="badge">Raz. Verbal</span>
+              <span class="badge">Expresión Oral</span>
+              <span class="badge">Redacción</span>
+              <span class="badge">Caligrafía</span>
+              <span class="badge">Personal Social</span>
+              <span class="badge">Ciencia y Ambiente</span>
+              <span class="badge">Computación</span>
+              <span class="badge">Robótica</span>
+              <span class="badge">Inglés</span>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-graduation-cap"></i> 4° Grado</h5>
+            <p><strong>Total: 16 textos</strong></p>
+            <div class="badge-container">
+              <span class="badge">Aritmética</span>
+              <span class="badge">Álgebra</span>
+              <span class="badge">Geometría</span>
+              <span class="badge">Raz. Matemático</span>
+              <span class="badge">Lenguaje</span>
+              <span class="badge">Literatura</span>
+              <span class="badge">Raz. Verbal</span>
+              <span class="badge">Caligrafía</span>
+              <span class="badge">Geografía</span>
+              <span class="badge">Historia Perú</span>
+              <span class="badge">Biología</span>
+              <span class="badge">Química</span>
+              <span class="badge">Física</span>
+              <span class="badge">Computación</span>
+              <span class="badge">Robótica</span>
+              <span class="badge">Inglés</span>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-graduation-cap"></i> 5°-6° Grado</h5>
+            <p><strong>Total: 17 textos</strong></p>
+            <div class="badge-container">
+              <span class="badge">Aritmética</span>
+              <span class="badge">Álgebra</span>
+              <span class="badge">Geometría</span>
+              <span class="badge">Raz. Matemático</span>
+              <span class="badge">Trigonometría</span>
+              <span class="badge">Lenguaje</span>
+              <span class="badge">Literatura</span>
+              <span class="badge">Raz. Verbal</span>
+              <span class="badge">Caligrafía</span>
+              <span class="badge">Geografía</span>
+              <span class="badge">Historia Perú</span>
+              <span class="badge">Biología</span>
+              <span class="badge">Química</span>
+              <span class="badge">Física</span>
+              <span class="badge">Robótica</span>
+              <span class="badge">Computación</span>
+              <span class="badge">Inglés</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sección Tecnología -->
+      <div class="section-content" id="tecnologia-primaria">
+        <h4 class="mb-4"><i class="fa fa-laptop"></i> Tecnología Educativa</h4>
+        
+        <div class="info-grid">
+          <div class="info-item">
+            <h5><i class="fa fa-robot"></i> Robótica Educativa</h5>
+            <ul>
+              <li>Kits LEGO Education</li>
+              <li>Programación Scratch</li>
+              <li>Robótica Arduino</li>
+              <li>Inteligencia Artificial</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-code"></i> Programación</h5>
+            <ul>
+              <li>Scratch Jr (1°-2°)</li>
+              <li>Scratch (3°-4°)</li>
+              <li>Python básico (5°-6°)</li>
+              <li>Desarrollo web básico</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-wifi"></i> Plataforma Digital</h5>
+            <ul>
+              <li>Aula virtual</li>
+              <li>Biblioteca digital</li>
+              <li>Comunicación padres</li>
+              <li>Recursos interactivos</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-flask"></i> Laboratorios</h5>
+            <ul>
+              <li>Laboratorio de cómputo</li>
+              <li>Sala de robótica</li>
+              <li>Laboratorio de ciencias</li>
+              <li>Aula multimedia</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sección Costos -->
+      <div class="section-content" id="costos-primaria">
+        <h4 class="mb-4"><i class="fa fa-money"></i> Costos de Matrícula 2026</h4>
+        
+        <div class="price-cards">
+          <div class="price-card">
+            <h5>Matrícula Anual</h5>
+            <div class="price-amount">S/. 330<span>.00</span></div>
+            <p class="price-details">Pago único al inicio<br>Incluye seguro escolar</p>
+          </div>
+          
+          <div class="price-card">
+            <h5>Pensión Mensual</h5>
+            <div class="price-amount">S/. 330<span>.00</span></div>
+            <p class="price-details">10 cuotas mensuales<br>Marzo a Diciembre</p>
+          </div>
+          
+          <div class="price-card">
+            <h5>Total Anual</h5>
+            <div class="price-amount">S/. 3,630<span>.00</span></div>
+            <p class="price-details">Matrícula + 10 pensiones<br>Material digital incluido</p>
+          </div>
+        </div>
+        
+        <div class="highlight-box">
+          <h4><i class="fa fa-gift"></i> Incluye sin costo adicional</h4>
+          <ul>
+            <li>Talleres de robótica</li>
+            <li>Clubes deportivos</li>
+            <li>Talleres de arte</li>
+            <li>Preparación para olimpiadas</li>
+            <li>Acceso a plataforma digital</li>
+          </ul>
+        </div>
+        
+        <div class="text-center mt-4">
+          <button class="action-btn" onclick="cerrarModal('modalPrimaria')">
+            <i class="fa fa-check"></i> Entendido
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- MODAL NIVEL SECUNDARIA MEJORADO -->
+<div id="modalSecundaria" class="modal-nivel secundaria-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3><i class="fa fa-graduation-cap"></i> Nivel Secundaria 2026</h3>
+      <div class="close-modal" onclick="cerrarModal('modalSecundaria')">×</div>
+    </div>
+    
+    <div class="modal-nav">
+      <div class="nav-item active" data-section="info-secundaria">
+        <i class="fa fa-info-circle"></i> Información
+      </div>
+      <div class="nav-item" data-section="cursos-secundaria">
+        <i class="fa fa-graduation-cap"></i> Plan de Estudios
+      </div>
+      <div class="nav-item" data-section="preparacion-secundaria">
+        <i class="fa fa-university"></i> Preparación Univ.
+      </div>
+      <div class="nav-item" data-section="costos-secundaria">
+        <i class="fa fa-money"></i> Costos
+      </div>
+      <div class="nav-item" data-section="logros-secundaria">
+        <i class="fa fa-trophy"></i> Logros
+      </div>
+    </div>
+    
+    <div class="modal-body">
+      
+      <!-- Sección Información -->
+      <div class="section-content active" id="info-secundaria">
+        <h4 class="mb-4"><i class="fa fa-star"></i> Información General</h4>
+        
+        <div class="info-grid">
+          <div class="info-item">
+            <h5><i class="fa fa-users"></i> Grados</h5>
+            <ul>
+              <li>1° a 5° secundaria</li>
+              <li>12 a 16 años</li>
+              <li>Ratio: 30 alumnos/aula</li>
+              <li>Tutoría personalizada</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-clock-o"></i> Horario</h5>
+            <ul>
+              <li>7:00 am - 3:00 pm</li>
+              <li>Lunes a Viernes</li>
+              <li>Inicio: 02 Marzo 2026</li>
+              <li>Simulacros sábados</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-graduation-cap"></i> Metodología</h5>
+            <ul>
+              <li>Aprendizaje basado en proyectos</li>
+              <li>Investigación científica</li>
+              <li>Pensamiento crítico</li>
+              <li>Emprendimiento</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-certificate"></i> Certificaciones</h5>
+            <ul>
+              <li>Inglés Cambridge</li>
+              <li>Francés básico</li>
+              <li>Computación Microsoft</li>
+              <li>Robótica certificada</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="highlight-box">
+          <h4><i class="fa fa-lightbulb-o"></i> Propuesta Educativa</h4>
+          <p>Preparamos jóvenes competentes para la educación superior y el mundo laboral. Enfocamos en desarrollo de liderazgo, emprendimiento, tecnología avanzada y ciudadanía global con preparación universitaria intensiva.</p>
+        </div>
+      </div>
+      
+      <!-- Sección Plan de Estudios -->
+      <div class="section-content" id="cursos-secundaria">
+        <h4 class="mb-4"><i class="fa fa-graduation-cap"></i> Plan de Estudios 2026</h4>
+        
+        <div class="table-responsive">
+          <table class="table-custom">
+            <thead>
+              <tr>
+                <th>ÁREA</th>
+                <th>1°-2°</th>
+                <th>3°-4°</th>
+                <th>5°</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Matemática</td><td>12 hrs</td><td>10 hrs</td><td>10 hrs</td></tr>
+              <tr><td>Comunicación</td><td>6 hrs</td><td>6 hrs</td><td>6 hrs</td></tr>
+              <tr><td>Inglés</td><td>2 hrs</td><td>2 hrs</td><td>2 hrs</td></tr>
+              <tr><td>Ciencias Sociales</td><td>4 hrs</td><td>5 hrs</td><td>5 hrs</td></tr>
+              <tr><td>Ciencia y Tecnología</td><td>5 hrs</td><td>6 hrs</td><td>6 hrs</td></tr>
+              <tr><td>Educación Física</td><td>2 hrs</td><td>2 hrs</td><td>2 hrs</td></tr>
+              <tr><td>Computación</td><td>1 hr</td><td>1 hr</td><td>1 hr</td></tr>
+              <tr><td>Arte y Cultura</td><td>1 hr</td><td>1 hr</td><td>1 hr</td></tr>
+              <tr><td>Preparación Admisión</td><td>1 hr</td><td>1 hr</td><td>2 hrs</td></tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="info-item mt-4">
+          <h5><i class="fa fa-bullseye"></i> Especializaciones</h5>
+          <ul>
+            <li><strong>Ciencias:</strong> Física, Química, Biología, Anatomía</li>
+            <li><strong>Humanidades:</strong> Filosofía, Economía, Sociología</li>
+            <li><strong>Tecnología:</strong> Programación, Robótica, IA</li>
+            <li><strong>Idiomas:</strong> Inglés avanzado, Francés</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Sección Preparación Universitaria -->
+      <div class="section-content" id="preparacion-secundaria">
+        <h4 class="mb-4"><i class="fa fa-university"></i> Preparación Universitaria</h4>
+        
+        <div class="info-grid">
+          <div class="info-item">
+            <h5><i class="fa fa-file-text"></i> Simulacros</h5>
+            <ul>
+              <li>Mensuales tipo universidad</li>
+              <li>UNMSM, UNI, PUCP, UNFV</li>
+              <li>Evaluación psicométrica</li>
+              <li>Asesoría personalizada</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-bullseye"></i> Orientación Vocacional</h5>
+            <ul>
+              <li>Test vocacionales</li>
+              <li>Visitas a universidades</li>
+              <li>Charlas con profesionales</li>
+              <li>Ferias universitarias</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-chart-line"></i> Seguimiento</h5>
+            <ul>
+              <li>Reportes de progreso</li>
+              <li>Tutoría individual</li>
+              <li>Asesoría académica</li>
+              <li>Preparación intensiva 5°</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-handshake"></i> Convenios</h5>
+            <ul>
+              <li>Universidades nacionales</li>
+              <li>Universidades privadas</li>
+              <li>Institutos tecnológicos</li>
+              <li>Empresas para prácticas</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="highlight-box">
+          <h4><i class="fa fa-calendar-check-o"></i> Cronograma 5° Secundaria</h4>
+          <ul>
+            <li><strong>Marzo-Abril:</strong> Diagnóstico y nivelación</li>
+            <li><strong>Mayo-Agosto:</strong> Ciclo intensivo completo</li>
+            <li><strong>Setiembre-Diciembre:</strong> Repaso general y simulacros</li>
+            <li><strong>Diciembre:</strong> Simulacro final y asesoría</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Sección Costos -->
+      <div class="section-content" id="costos-secundaria">
+        <h4 class="mb-4"><i class="fa fa-money"></i> Costos de Matrícula 2026</h4>
+        
+        <div class="price-cards">
+          <div class="price-card">
+            <h5>Matrícula Anual</h5>
+            <div class="price-amount">S/. 350<span>.00</span></div>
+            <p class="price-details">Pago único al inicio<br>Incluye materiales</p>
+          </div>
+          
+          <div class="price-card">
+            <h5>Pensión Mensual</h5>
+            <div class="price-amount">S/. 350<span>.00</span></div>
+            <p class="price-details">10 cuotas mensuales<br>Marzo a Diciembre</p>
+          </div>
+          
+          <div class="price-card">
+            <h5>Total Anual</h5>
+            <div class="price-amount">S/. 3,850<span>.00</span></div>
+            <p class="price-details">Matrícula + 10 pensiones<br>Prep. universitaria incluida</p>
+          </div>
+        </div>
+        
+        <div class="highlight-box">
+          <h4><i class="fa fa-gift"></i> Incluye sin costo adicional</h4>
+          <ul>
+            <li>Preparación universitaria intensiva</li>
+            <li>Certificación inglés Cambridge</li>
+            <li>Simulacros mensuales</li>
+            <li>Orientación vocacional</li>
+            <li>Talleres de liderazgo</li>
+            <li>Pasantías profesionales</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Sección Logros -->
+      <div class="section-content" id="logros-secundaria">
+        <h4 class="mb-4"><i class="fa fa-trophy"></i> Logros y Resultados 2025</h4>
+        
+        <div class="info-grid">
+          <div class="info-item">
+            <h5><i class="fa fa-chart-line"></i> Admisiones 2025</h5>
+            <ul>
+              <li>95% ingresantes a universidades</li>
+              <li>60% a universidades nacionales</li>
+              <li>35% a universidades privadas</li>
+              <li>5% al extranjero</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-medal"></i> Olimpiadas 2025</h5>
+            <ul>
+              <li>1° puesto matemática regional</li>
+              <li>2° puesto física nacional</li>
+              <li>3° puesto química regional</li>
+              <li>Finalistas programación</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-certificate"></i> Certificaciones</h5>
+            <ul>
+              <li>80% certificación inglés B2</li>
+              <li>40% certificación inglés C1</li>
+              <li>100% certificación computación</li>
+              <li>Robótica certificada</li>
+            </ul>
+          </div>
+          
+          <div class="info-item">
+            <h5><i class="fa fa-star"></i> Reconocimientos</h5>
+            <ul>
+              <li>Mejor proyecto científico</li>
+              <li>Emprendimiento escolar</li>
+              <li>Responsabilidad social</li>
+              <li>Deportes regionales</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="text-center mt-4">
+          <button class="action-btn" onclick="cerrarModal('modalSecundaria')">
+            <i class="fa fa-check"></i> Entendido
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- ==========================================================
+     FOOTER ORIGINAL (NO MODIFICADO)
+=========================================================== -->
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6 footer-info">
+          <a href="#"><img src="img/logo1.png" style="max-width:150px;"></a>
+          <p>Somos una institución educativa comprometida con la formación integral.</p>
+        </div>
+
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h4>Enlaces útiles</h4>
+          <ul>
+            <li><a href="index - copia.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#contact">Contáctanos</a></li>
+            <li><a href="#">Privacidad</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-contact">
+          <h4>Contacto</h4>
+          <p>
+            Los Duraznos 267<br>
+            Tarma – Junín – Perú<br>
+            <strong>Tel:</strong> +51 996 039 217<br>
+            <strong>Email:</strong> admision@peruanoe.com<br>
+          </p>
+
+          <div class="social-links">
+            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-newsletter">
+          <h4>Boletín</h4>
+          <form>
+            <input type="email" placeholder="Tu correo">
+            <input type="submit" value="Suscribirme">
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container text-center">
+    © <strong>I.E.P. Peruano Europeo</strong> • Todos los derechos reservados
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script> 
+  // Inicializar animaciones
+  new WOW().init();
+  
+  // Funciones para abrir y cerrar modales
+  function abrirModal(modalId) {
+    document.getElementById(modalId).classList.add('show');
+    document.body.style.overflow = 'hidden';
+    
+    // Reiniciar navegación al abrir modal
+    const modal = document.getElementById(modalId);
+    const navItems = modal.querySelectorAll('.nav-item');
+    const sections = modal.querySelectorAll('.section-content');
+    
+    navItems.forEach(item => item.classList.remove('active'));
+    sections.forEach(section => section.classList.remove('active'));
+    
+    if (navItems.length > 0) navItems[0].classList.add('active');
+    if (sections.length > 0) sections[0].classList.add('active');
+  }
+
+  function cerrarModal(modalId) {
+    document.getElementById(modalId).classList.remove('show');
+    document.body.style.overflow = 'auto';
+  }
+
+  // Sistema de navegación en modales
+  document.addEventListener('DOMContentLoaded', function() {
+    // Navegación por pestañas
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.addEventListener('click', function() {
+        const modal = this.closest('.modal-nivel');
+        const sectionId = this.getAttribute('data-section');
+        
+        // Remover activo de todos
+        modal.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+        modal.querySelectorAll('.section-content').forEach(s => s.classList.remove('active'));
+        
+        // Activar actual
+        this.classList.add('active');
+        modal.querySelector(`#${sectionId}`).classList.add('active');
+        
+        // Scroll suave al inicio de la sección
+        const modalBody = modal.querySelector('.modal-body');
+        modalBody.scrollTop = 0;
+      });
+    });
+    
+    // Cerrar modal al hacer clic fuera
+    document.querySelectorAll('.modal-nivel').forEach(modal => {
+      modal.addEventListener('click', function(e) {
+        if (e.target === this) {
+          cerrarModal(this.id);
+        }
+      });
+    });
+    
+    // Cerrar con tecla ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-nivel.show').forEach(modal => {
+          cerrarModal(modal.id);
+        });
+      }
+    });
+    
+    // Actualizar los botones "Descubre más" para que funcionen con onclick
+    document.querySelectorAll('.btn-nivel').forEach(boton => {
+      if (boton.textContent.includes('Descubre más')) {
+        boton.onclick = function(e) {
+          e.preventDefault();
+          const nivel = this.closest('.nivel-card').classList[1];
+          if (nivel.includes('inicial')) abrirModal('modalInicial');
+          else if (nivel.includes('primaria')) abrirModal('modalPrimaria');
+          else if (nivel.includes('secundaria')) abrirModal('modalSecundaria');
+          return false;
+        };
+      }
+    });
+    
+    // NAVBAR MÓVIL - Funcionalidad
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
+    
+    if (mobileNavToggle && mobileNav) {
+      // Abrir menú móvil
+      mobileNavToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        mobileNav.classList.add('active');
+        mobileNavOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+      
+      // Cerrar menú móvil
+      function closeMobileNav() {
+        mobileNav.classList.remove('active');
+        mobileNavOverlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+      
+      // Cerrar al hacer clic en overlay
+      mobileNavOverlay.addEventListener('click', closeMobileNav);
+      
+      // Cerrar al hacer clic fuera
+      document.addEventListener('click', function(e) {
+        if (!mobileNav.contains(e.target) && !mobileNavToggle.contains(e.target) && mobileNav.classList.contains('active')) {
+          closeMobileNav();
+        }
+      });
+      
+      // Menús desplegables en móvil
+      mobileNav.querySelectorAll('.drop-down > a').forEach(item => {
+        item.addEventListener('click', function(e) {
+          if (window.innerWidth <= 991.98) {
+            e.preventDefault();
+            const parent = this.parentElement;
+            parent.classList.toggle('active');
+          }
+        });
+      });
+      
+      // Cerrar menú al hacer clic en enlace
+      mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+          if (!this.parentElement.classList.contains('drop-down') || !this.querySelector('.fa-chevron-down')) {
+            closeMobileNav();
+          }
+        });
+      });
+    }
+    
+    // Prevenir que los enlaces del footer se abran en los modales
+    document.querySelectorAll('footer a').forEach(enlace => {
+      enlace.addEventListener('click', function(e) {
+        if (document.querySelector('.modal-nivel.show')) {
+          e.stopPropagation();
+        }
+      });
+    });
+  });
+  
+  // Función para cambiar sección desde JavaScript
+  function cambiarSeccion(modalId, sectionId) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+    
+    const navItem = modal.querySelector(`.nav-item[data-section="${sectionId}"]`);
+    if (navItem) {
+      navItem.click();
+    }
+  }
+</script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

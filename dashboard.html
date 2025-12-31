@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Intranet - Matrículas 2026 | Colegio Peruano Europeo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Iconos y Fuentes -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0056b3;
+      --accent: #007bff;
+      --sidebar-bg: #0b2149;
+      --sidebar-hover: #173a75;
+      --light-bg: #f5f7fa;
+      --text-dark: #2c3e50;
+      --shadow: rgba(0,0,0,0.15);
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background: var(--sidebar-bg);
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 25px 0;
+      box-shadow: 2px 0 10px var(--shadow);
+      z-index: 10;
+    }
+
+    .sidebar .logo {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .sidebar .logo img {
+      width: 155px;
+      margin-bottom: 10px;
+    }
+
+    .sidebar h4 {
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li a {
+      display: flex;
+      align-items: center;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar ul li a:hover {
+      background: var(--sidebar-hover);
+      padding-left: 28px;
+    }
+
+    .sidebar ul li a i {
+      margin-right: 10px;
+      font-size: 1.1rem;
+    }
+
+    /* Contenido principal */
+    main {
+      margin-left: 260px;
+      padding: 40px 60px;
+      width: 100%;
+      transition: 0.3s;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      color: white;
+      padding: 18px 30px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 15px var(--shadow);
+    }
+
+    header h2 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .user-info {
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .user-info i {
+      font-size: 1.3rem;
+    }
+
+    /* Tarjetas estadísticas */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 35px;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 15px;
+      padding: 25px;
+      color: white;
+      box-shadow: 0 6px 18px var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px var(--shadow);
+    }
+
+    .stat-card h5 {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .stat-card .count {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    .stat-card i {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      opacity: 0.3;
+      font-size: 2rem;
+    }
+
+    /* Tabla */
+    .card {
+      background: white;
+      border: none;
+      border-radius: 15px;
+      padding: 25px;
+      margin-top: 30px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    }
+
+    th {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    td {
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    tr:hover {
+      background-color: #f8f9fa;
+    }
+
+    .btn-back {
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      transition: 0.3s;
+    }
+
+    .btn-back:hover {
+      background: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      color: #555;
+      font-size: 0.9rem;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 992px) {
+      .sidebar {
+        width: 220px;
+      }
+      main {
+        margin-left: 220px;
+        padding: 30px 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar { display: none; }
+      main { margin: 0; padding: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">
+      <img src="img/logo1.png" alt="Logo Colegio">
+      <h4>Colegio Peruano Europeo</h4>
+    </div>
+    <ul>
+      <li><a href="#"><i class="fas fa-home"></i>Inicio</a></li>
+      <li><a href="#"><i class="fas fa-user-graduate"></i>Estudiantes</a></li>
+      <li><a href="#"><i class="fas fa-chalkboard-teacher"></i>Docentes</a></li>
+      <li><a href="#"><i class="fas fa-book"></i>Áreas</a></li>
+      <li><a href="#"><i class="fas fa-calendar-alt"></i>Eventos</a></li>
+      <li><a href="#"><i class="fas fa-cog"></i>Configuración</a></li>
+    </ul>
+  </div>
+
+  <!-- Contenido principal -->
+  <main>
+    <header>
+      <h2><i class="fas fa-school me-2"></i>Panel de Matrículas 2026</h2>
+      <div class="user-info">
+        <i class="fas fa-user-circle"></i> Admin
+      </div>
+    </header>
+
+    <section id="intro">
+      <p class="mt-4 fw-semibold">📊 Estadísticas de Matrícula por Grado:</p>
+      <div class="stats-grid" id="statsContainer"></div>
+
+      <!-- Detalles -->
+      <div id="detailsView" class="card" style="display:none;">
+        <div class="d-flex align-items-center mb-3">
+          <button id="backBtn" class="btn btn-back me-3"><i class="fas fa-arrow-left"></i> Volver</button>
+          <h4 id="detailsTitle" class="text-primary mb-0">Detalles de Matrículas</h4>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-middle">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Nombres</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>DNI</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th>Nivel</th>
+                <th>Grado</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Colegio Peruano Europeo — Intranet Institucional. Todos los derechos reservados.</p>
+    </footer>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const matriculasData = [
+      { nombres: "Ana María", apellidoP: "García", apellidoM: "López", dni: "76543210", telefono: "987654321", email: "ana@email.com", nivel: "Primaria", grado: "1ro Primaria" },
+      { nombres: "Carlos José", apellidoP: "Rodríguez", apellidoM: "Pérez", dni: "87654321", telefono: "987654322", email: "carlos@email.com", nivel: "Primaria", grado: "1ro Primaria" },
+      { nombres: "Camila Estefanía", apellidoP: "Flores", apellidoM: "Castro", dni: "67890123", telefono: "987654329", email: "camila@email.com", nivel: "Secundaria", grado: "2do Secundaria" }
+    ];
+
+    const statsContainer = document.getElementById('statsContainer');
+    const detailsView = document.getElementById('detailsView');
+    const tableBody = detailsView.querySelector("tbody");
+    const backBtn = document.getElementById('backBtn');
+    const detailsTitle = document.getElementById('detailsTitle');
+
+    function calcularEstadisticas() {
+      const stats = {};
+      matriculasData.forEach(e => {
+        if (!stats[e.grado]) stats[e.grado] = { count: 0, estudiantes: [] };
+        stats[e.grado].count++;
+        stats[e.grado].estudiantes.push(e);
+      });
+      return stats;
+    }
+
+    function mostrarEstadisticas() {
+      const data = calcularEstadisticas();
+      statsContainer.innerHTML = '';
+      Object.keys(data).forEach(grado => {
+        const stat = data[grado];
+        const card = document.createElement('div');
+        card.className = 'stat-card';
+        card.innerHTML = `
+          <i class="fas fa-user-graduate"></i>
+          <h5>${grado}</h5>
+          <div class="count">${stat.count}</div>
+          <p>${stat.count === 1 ? 'Estudiante matriculado' : 'Estudiantes matriculados'}</p>
+        `;
+        card.addEventListener('click', () => mostrarDetalles(grado, stat.estudiantes));
+        statsContainer.appendChild(card);
+      });
+    }
+
+    function mostrarDetalles(grado, estudiantes) {
+      detailsView.style.display = 'block';
+      detailsTitle.textContent = `Matriculados en ${grado}`;
+      tableBody.innerHTML = '';
+      estudiantes.forEach((e, i) => {
+        tableBody.innerHTML += `
+          <tr>
+            <td>${i+1}</td><td>${e.nombres}</td><td>${e.apellidoP}</td>
+            <td>${e.apellidoM}</td><td>${e.dni}</td>
+            <td>${e.telefono}</td><td>${e.email}</td>
+            <td>${e.nivel}</td><td>${e.grado}</td>
+          </tr>`;
+      });
+      window.scrollTo({ top: detailsView.offsetTop - 60, behavior: 'smooth' });
+    }
+
+    backBtn.addEventListener('click', () => {
+      detailsView.style.display = 'none';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    mostrarEstadisticas();
+  </script>
+</body>
+</html>

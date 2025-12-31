@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>I.E.P. Peruano Europeo – Nosotros</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <style>
+    /* ======================================================================
+       ESTILOS UNIFICADOS CON PÁGINA PRINCIPAL
+       Colores y fuentes consistentes
+    ====================================================================== */
+
+    /* Fondo general */
+    body {
+      font-family: 'Montserrat', 'Open Sans', sans-serif;
+      color: #444;
+      background-color: #f5f5f5 !important;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* Header fijo consistente - SIN CAMBIOS */
+    #header {
+      background: rgba(255, 255, 255, 0.98) !important;
+      box-shadow: 0 2px 15px rgba(10, 35, 66, 0.1);
+    }
+
+    /* Navegación activa - SIN CAMBIOS */
+    .main-nav ul li.active > a {
+      color: #0a2342;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .main-nav ul li.active > a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #FFC107;
+    }
+
+    /* Botones consistentes - SIN CAMBIOS */
+    .btn-get-started {
+      background-color: #FFC107;
+      color: #000;
+      font-weight: 600;
+      border-radius: 25px;
+      padding: 10px 25px;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .btn-get-started:hover {
+      background-color: #ffb300;
+      color: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+    }
+
+    /* ======================================================================
+       SECCIÓN NOSOTROS - FONDO AZUL MEJORADO CON DETALLES DECORATIVOS
+    ====================================================================== */
+
+    /* Fondo azul mejorado con gradiente más atractivo */
+    #about {
+      position: relative;
+      background: linear-gradient(135deg, #e8f2ff 0%, #d6e7ff 100%) !important;
+      overflow: hidden;
+      padding: 120px 0 100px;
+      min-height: 100vh;
+    }
+
+    /* Patrón de ondas decorativas */
+    #about::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(circle at 15% 85%, rgba(255, 255, 255, 0.3) 0%, transparent 25%),
+        radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.3) 0%, transparent 25%),
+        linear-gradient(45deg, transparent 49%, rgba(255, 255, 255, 0.1) 50%, transparent 51%),
+        linear-gradient(-45deg, transparent 49%, rgba(255, 255, 255, 0.1) 50%, transparent 51%);
+      background-size: 100% 100%, 100% 100%, 50px 50px, 50px 50px;
+      z-index: 0;
+    }
+
+    /* Elemento decorativo de esquina superior izquierda */
+    #about::after {
+      content: "";
+      position: absolute;
+      top: -100px;
+      left: -100px;
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(135deg, rgba(10, 35, 66, 0.05) 0%, transparent 50%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    /* Puntos decorativos flotantes */
+    .decorative-dots {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .decorative-dot {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      animation: floatDot 15s infinite linear;
+    }
+
+    .decorative-dot:nth-child(1) {
+      width: 10px;
+      height: 10px;
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .decorative-dot:nth-child(2) {
+      width: 8px;
+      height: 8px;
+      top: 60%;
+      left: 15%;
+      animation-delay: 1s;
+    }
+
+    .decorative-dot:nth-child(3) {
+      width: 12px;
+      height: 12px;
+      top: 40%;
+      right: 10%;
+      animation-delay: 2s;
+    }
+
+    .decorative-dot:nth-child(4) {
+      width: 6px;
+      height: 6px;
+      top: 80%;
+      right: 20%;
+      animation-delay: 3s;
+    }
+
+    .decorative-dot:nth-child(5) {
+      width: 9px;
+      height: 9px;
+      top: 30%;
+      left: 80%;
+      animation-delay: 4s;
+    }
+
+    @keyframes floatDot {
+      0%, 100% {
+        transform: translateY(0) translateX(0);
+      }
+      25% {
+        transform: translateY(-20px) translateX(10px);
+      }
+      50% {
+        transform: translateY(0) translateX(20px);
+      }
+      75% {
+        transform: translateY(20px) translateX(10px);
+      }
+    }
+
+    /* Líneas decorativas diagonales */
+    .decorative-line {
+      position: absolute;
+      width: 150px;
+      height: 2px;
+      background: rgba(10, 35, 66, 0.1);
+      transform: rotate(45deg);
+      z-index: 0;
+    }
+
+    .decorative-line:nth-child(6) {
+      top: 15%;
+      left: -50px;
+      width: 200px;
+    }
+
+    .decorative-line:nth-child(7) {
+      bottom: 20%;
+      right: -50px;
+      width: 200px;
+    }
+
+    /* Encabezado mejorado */
+    #about .section-header {
+      position: relative;
+      z-index: 2;
+    }
+
+    #about .section-header h3 {
+      color: #0a2342;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      font-size: 2.8rem;
+      text-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      position: relative;
+      display: inline-block;
+    }
+
+    #about .section-header h3::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #FFC107, #ffb300);
+      border-radius: 2px;
+    }
+
+    #about .section-header p {
+      color: #4a5c6d;
+      max-width: 800px;
+      margin: 40px auto;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      padding: 0 15px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border-left: 4px solid #FFC107;
+    }
+
+    /* Contenedor principal */
+    .about-cols {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Tarjetas mejoradas con efecto de elevación */
+    .about-col {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(10, 35, 66, 0.1);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      margin-bottom: 30px;
+      position: relative;
+      border: none;
+      z-index: 2;
+    }
+
+    .about-col::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+
+    .about-col:hover::before {
+      opacity: 1;
+    }
+
+    .about-col:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(10, 35, 66, 0.2);
+    }
+
+    /* Imagen de la tarjeta con efecto de brillo */
+    .about-col .img {
+      position: relative;
+      overflow: hidden;
+      height: 280px;
+    }
+
+    .about-col .img::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent 60%, rgba(10, 35, 66, 0.3) 100%);
+      z-index: 1;
+    }
+
+    .about-col .img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .about-col:hover .img img {
+      transform: scale(1.15);
+    }
+
+    /* Icono mejorado con efecto de pulso */
+    .about-col .icon {
+      position: absolute;
+      bottom: -35px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #FFC107, #ffb300);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      color: #000;
+      font-size: 32px;
+      box-shadow: 0 10px 25px rgba(255, 193, 7, 0.4);
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 3px solid white;
+      animation: pulseIcon 2s infinite;
+    }
+
+    @keyframes pulseIcon {
+      0%, 100% {
+        box-shadow: 0 10px 25px rgba(255, 193, 7, 0.4);
+      }
+      50% {
+        box-shadow: 0 15px 35px rgba(255, 193, 7, 0.6);
+      }
+    }
+
+    .about-col:hover .icon {
+      transform: translateX(-50%) rotateY(360deg) scale(1.1);
+      animation: none;
+      box-shadow: 0 20px 40px rgba(255, 193, 7, 0.6);
+    }
+
+    /* Contenido de la tarjeta */
+    .about-col .content {
+      padding: 60px 30px 35px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      background: white;
+    }
+
+    .about-col h2 {
+      color: #0a2342;
+      font-weight: 700;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .about-col h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #FFC107, #ffb300);
+      border-radius: 2px;
+    }
+
+    .about-col p {
+      color: #5a6c7d;
+      line-height: 1.8;
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+
+    /* Sección de valores mejorada */
+    .value-item {
+      padding: 30px 20px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.9);
+      transition: all 0.4s ease;
+      box-shadow: 0 8px 25px rgba(10, 35, 66, 0.08);
+      height: 100%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      z-index: 2;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+    }
+
+    .value-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #FFC107, #ffb300);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      z-index: 1;
+    }
+
+    .value-item:hover::before {
+      transform: scaleX(1);
+    }
+
+    .value-item:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 15px 35px rgba(10, 35, 66, 0.15);
+      background: white;
+    }
+
+    .value-icon {
+      color: #0a2342;
+      font-size: 3rem;
+      margin-bottom: 20px;
+      transition: all 0.4s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    .value-item:hover .value-icon {
+      transform: scale(1.2) rotate(5deg);
+      color: #FFC107;
+    }
+
+    /* Título de valores */
+    .value-item h5 {
+      color: #0a2342;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .value-item p {
+      color: #5a6c7d;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Botones de llamada a la acción mejorados */
+    .cta-buttons {
+      position: relative;
+      z-index: 2;
+      margin-top: 50px;
+    }
+
+    .btn-get-started {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      transition: all 0.4s ease;
+    }
+
+    .btn-get-started::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.7s ease;
+      z-index: -1;
+    }
+
+    .btn-get-started:hover::before {
+      left: 100%;
+    }
+
+    .btn-get-started:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(255, 193, 7, 0.4);
+    }
+
+    /* ======================================================================
+       FOOTER - EXACTAMENTE IGUAL A LA PÁGINA PRINCIPAL
+    ====================================================================== */
+
+    #footer {
+      background: linear-gradient(135deg, #0a2342 0%, #0c3556 100%);
+      color: white;
+    }
+
+    .footer-top {
+      padding: 60px 0 30px 0;
+    }
+
+    .footer-info img {
+      margin-bottom: 15px;
+    }
+
+    .footer-info p {
+      font-size: 14px;
+      line-height: 24px;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-links {
+      margin-bottom: 30px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links ul li {
+      padding: 6px 0;
+    }
+
+    .footer-links ul li:first-child {
+      padding-top: 0;
+    }
+
+    .footer-links ul a {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .footer-links ul a:hover {
+      color: #FFC107;
+      padding-left: 5px;
+    }
+
+    .footer-contact p {
+      line-height: 26px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-newsletter {
+      margin-bottom: 30px;
+    }
+
+    .footer-newsletter p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+    }
+
+    .footer-newsletter form {
+      margin-top: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 6px 10px;
+      position: relative;
+      border-radius: 4px;
+      display: flex;
+    }
+
+    .footer-newsletter form input[type="email"] {
+      border: 0;
+      padding: 4px;
+      width: calc(100% - 110px);
+      background: transparent;
+      color: white;
+    }
+
+    .footer-newsletter form input[type="submit"] {
+      position: absolute;
+      top: 0;
+      right: -2px;
+      bottom: 0;
+      border: 0;
+      background: none;
+      font-size: 16px;
+      padding: 0 20px;
+      background: #FFC107;
+      color: #0a2342;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .social-links {
+      margin-bottom: 20px;
+    }
+
+    .social-links a {
+      font-size: 18px;
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      line-height: 1;
+      padding: 8px 0;
+      margin-right: 4px;
+      border-radius: 4px;
+      text-align: center;
+      width: 36px;
+      height: 36px;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      background: #FFC107;
+      color: #0a2342;
+      text-decoration: none;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 14px;
+    }
+
+    .credits {
+      padding-top: 10px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .credits a {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* ======================================================================
+       RESPONSIVE
+    ====================================================================== */
+
+    @media (max-width: 1200px) {
+      #about .section-header h3 {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      #about {
+        padding: 100px 0 80px;
+      }
+      
+      #about .section-header h3 {
+        font-size: 2.2rem;
+      }
+      
+      #about .section-header p {
+        font-size: 1.05rem;
+        padding: 20px;
+      }
+      
+      .about-col .img {
+        height: 240px;
+      }
+      
+      .about-col .icon {
+        width: 70px;
+        height: 70px;
+        font-size: 28px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #about {
+        padding: 80px 0 60px;
+      }
+      
+      .about-col {
+        margin-bottom: 50px;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .about-col .img {
+        height: 220px;
+      }
+      
+      .value-item {
+        margin-bottom: 25px;
+      }
+      
+      #about .section-header h3 {
+        font-size: 2rem;
+      }
+      
+      #about .section-header p {
+        margin: 30px auto;
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      #about .section-header h3 {
+        font-size: 1.8rem;
+      }
+      
+      .about-col .content {
+        padding: 50px 20px 25px;
+      }
+      
+      .about-col .icon {
+        width: 65px;
+        height: 65px;
+        font-size: 26px;
+        bottom: -30px;
+      }
+      
+      .btn-get-started {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+      }
+      
+      .btn-get-started.ml-3 {
+        margin-left: auto !important;
+      }
+    }
+
+    /* Animación de entrada */
+    .wow {
+      animation-duration: 1s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================================
+       HEADER - SIN CAMBIOS
+  ============================================================ -->
+  <header id="header" class="fixed-top">
+    <div class="container">
+
+      <div class="logo float-left">
+        <a href="index.html" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li><a href="index - copia.html">Inicio</a></li>
+          <li class="active"><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="niveleseducativos.html">Niveles Educativos</a></li>
+          <li><a href="actividades.html">Actividades</a></li>
+          <li><a href="intranetdemo.html">Intranet</a></li>
+          <li class="drop-down"><a href="#">Más</a>
+            <ul>
+              <li><a href="#">Admisión</a></li>
+              <li class="drop-down"><a href="#">Estudiantes</a>
+                <ul>
+                  <li><a href="#">Reglamento</a></li>
+                  <li><a href="#">Talleres</a></li>
+                  <li><a href="#">Biblioteca</a></li>
+                  <li><a href="#">Calendario Escolar</a></li>
+                  <li><a href="#">Consejería</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Padres de Familia</a></li>
+              <li><a href="#">Noticias</a></li>
+              <li><a href="#">Galería</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contáctanos</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header><!-- #header -->
+
+  <!-- ==========================================================
+       SECCIÓN NOSOTROS - CON FONDO AZUL MEJORADO
+  ============================================================ -->
+  <section id="about">
+
+    <!-- Elementos decorativos -->
+    <div class="decorative-dots">
+      <div class="decorative-dot"></div>
+      <div class="decorative-dot"></div>
+      <div class="decorative-dot"></div>
+      <div class="decorative-dot"></div>
+      <div class="decorative-dot"></div>
+      <div class="decorative-line"></div>
+      <div class="decorative-line"></div>
+    </div>
+
+    <div class="container">
+
+      <header class="section-header text-center wow fadeInUp">
+        <h3>Conoce Nuestra Institución</h3>
+        <p>
+          En la <strong style="color: #0a2342;">I.E.P. Peruano Europeo</strong> formamos estudiantes con valores sólidos,
+          pensamiento crítico, liderazgo y una visión internacional que los prepara para los desafíos del futuro.
+          Nuestro compromiso es brindar una educación de excelencia que integra innovación pedagógica, 
+          desarrollo humano y responsabilidad social.
+        </p>
+      </header>
+
+      <div class="row about-cols">
+
+        <!-- Historia -->
+        <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="about-col">
+            <div class="img">
+              <img src="img/portada1.jpg" class="img-fluid" alt="Nuestra Historia">
+              <div class="icon"><i class="fa fa-history"></i></div>
+            </div>
+            <div class="content">
+              <h2>Nuestra Historia</h2>
+              <p>
+                Con más de 11 años de trayectoria, crecemos con un firme compromiso educativo,
+                impulsando la innovación pedagógica, la formación integral y un ambiente que
+                transforma positivamente la vida de nuestros estudiantes.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Misión -->
+        <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+          <div class="about-col">
+            <div class="img">
+              <img src="img/portada4.jpg" class="img-fluid" alt="Nuestra Misión">
+              <div class="icon"><i class="fa fa-bullseye"></i></div>
+            </div>
+            <div class="content">
+              <h2>Nuestra Misión</h2>
+              <p>
+                Brindar una educación integral de excelencia que desarrolle la creatividad,
+                autonomía, pensamiento crítico y compromiso social en cada estudiante,
+                preparándolos para ser ciudadanos responsables y líderes transformadores.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visión -->
+        <div class="col-md-4 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="about-col">
+            <div class="img">
+              <img src="img/portada6.jpg" class="img-fluid" alt="Nuestra Visión">
+              <div class="icon"><i class="fa fa-eye"></i></div>
+            </div>
+            <div class="content">
+              <h2>Nuestra Visión</h2>
+              <p>
+                Ser la institución educativa referente en innovación pedagógica,
+                valores humanos y excelencia académica a nivel regional, reconocida
+                por formar líderes capaces de transformar su entorno con ética y visión global.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sección de valores -->
+      <div class="row mt-5 pt-4">
+        <div class="col-12">
+          <div class="text-center wow fadeInUp" data-wow-delay="0.4s">
+            <h4 style="color: #0a2342; font-weight: 700; margin-bottom: 50px; font-size: 2rem;">
+              <i class="fa fa-heart" style="color: #FFC107; margin-right: 15px;"></i>
+              Nuestros Valores Fundamentales
+            </h4>
+            <div class="row justify-content-center">
+              <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                <div class="value-item">
+                  <div class="value-icon">
+                    <i class="fa fa-handshake-o"></i>
+                  </div>
+                  <h5>Respeto</h5>
+                  <p>Mutuo y por la diversidad cultural e individual</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                <div class="value-item">
+                  <div class="value-icon">
+                    <i class="fa fa-balance-scale"></i>
+                  </div>
+                  <h5>Responsabilidad</h5>
+                  <p>Personal, social y ambiental</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                <div class="value-item">
+                  <div class="value-icon">
+                    <i class="fa fa-lightbulb-o"></i>
+                  </div>
+                  <h5>Innovación</h5>
+                  <p>Pensamiento creativo y solución de problemas</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                <div class="value-item">
+                  <div class="value-icon">
+                    <i class="fa fa-users"></i>
+                  </div>
+                  <h5>Trabajo en Equipo</h5>
+                  <p>Colaboración efectiva y solidaria</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       FOOTER - SIN CAMBIOS
+  ============================================================ -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-info">
+            <a href="index.html" class="scrollto">
+              <img src="img/logo1.png" alt="" class="img-fluid" style="max-width: 160px;">
+            </a>
+            <p>
+              Somos una institución educativa comprometida con la formación integral de nuestros estudiantes,
+              promoviendo valores, conocimiento y responsabilidad social.
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Enlaces Útiles</h4>
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="nosotros.html">Nosotros</a></li>
+              <li><a href="#niveles">Niveles Educativos</a></li>
+              <li><a href="#portfolio">Actividades</a></li>
+              <li><a href="#">Política de Privacidad</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contáctanos</h4>
+            <p>
+              Los Duraznos 267 <br>
+              Tarma, Junín - Perú<br><br>
+              <strong>Teléfono:</strong> +51 996 039 217<br>
+              <strong>Correo:</strong> admision@peruanoe.com<br>
+            </p>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Boletín Informativo</h4>
+            <p>Suscríbete y recibe nuestras noticias y comunicados institucionales.</p>
+            <form action="" method="post">
+              <input type="email" name="email" placeholder="Tu correo electrónico">
+              <input type="submit" value="Suscribirme">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>I.E.P. Peruano Europeo</strong>. Todos los derechos reservados
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/mobile-nav/mobile-nav.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+  <script>
+    new WOW().init();
+    
+    $(document).ready(function(){
+      $('a[href^="#"]').on('click', function(event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top - 70
+          }, 800, function(){
+            window.location.hash = hash;
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

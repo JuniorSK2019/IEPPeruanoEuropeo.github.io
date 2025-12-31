@@ -1,0 +1,1126 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>I.E.P. Peruano Europeo – Actividades</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  <!-- Tema principal -->
+  <link href="css/style.css" rel="stylesheet">
+
+<style>
+/* ======================================================================
+   GALERÍA DE ACTIVIDADES INTERACTIVA
+   Diseño moderno con filtros y efectos
+====================================================================== */
+
+/* Fondo general */
+.actividades-section {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  overflow: hidden;
+  padding: 120px 0 80px 0;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+}
+
+/* Patrón de fondo decorativo */
+.actividades-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(#0a2342 0.8px, transparent 0.8px);
+  background-size: 50px 50px;
+  opacity: 0.03;
+  z-index: 0;
+}
+
+/* Encabezado */
+.actividades-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+  padding-top: 20px;
+}
+
+.actividades-header h1 {
+  color: #0a2342;
+  font-weight: 800;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.actividades-header h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #FFC107, #FF9800);
+  border-radius: 2px;
+}
+
+.actividades-header p {
+  color: #555;
+  max-width: 700px;
+  margin: 25px auto;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+/* Filtros de actividades */
+.filtros-container {
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.filtros-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filtro-btn {
+  padding: 12px 28px;
+  background: white;
+  color: #0a2342;
+  border: 2px solid #e0e0e0;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filtro-btn:hover {
+  background: #f0f7ff;
+  border-color: #0a2342;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(10, 35, 66, 0.1);
+}
+
+.filtro-btn.active {
+  background: #0a2342;
+  color: white;
+  border-color: #0a2342;
+  box-shadow: 0 5px 15px rgba(10, 35, 66, 0.2);
+}
+
+.filtro-btn i {
+  font-size: 1.1rem;
+}
+
+/* Galería grid */
+.galeria-container {
+  position: relative;
+  z-index: 2;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+/* Tarjetas de actividad */
+.actividad-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(10, 35, 66, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.actividad-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 50px rgba(10, 35, 66, 0.15);
+}
+
+/* Imagen de la actividad */
+.card-img-actividad {
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-img-actividad img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.actividad-card:hover .card-img-actividad img {
+  transform: scale(1.1);
+}
+
+/* Overlay en imagen */
+.img-overlay-actividad {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 40%, rgba(10, 35, 66, 0.8) 100%);
+  z-index: 1;
+}
+
+/* Badge de categoría */
+.categoria-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #0a2342;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Contenido de la tarjeta */
+.card-content-actividad {
+  padding: 25px;
+  position: relative;
+}
+
+.card-content-actividad h3 {
+  color: #0a2342;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.card-content-actividad h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  border-radius: 2px;
+  background: #FF9800;
+}
+
+.card-content-actividad p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Metadatos de la actividad */
+.actividad-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.fecha-actividad {
+  color: #666;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.fecha-actividad i {
+  color: #FF9800;
+}
+
+.btn-ver-mas {
+  display: inline-block;
+  padding: 8px 20px;
+  background: #0a2342;
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-ver-mas:hover {
+  background: #0c3556;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(10, 35, 66, 0.2);
+}
+
+/* Lightbox personalizado */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  position: relative;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.close-lightbox {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Contador de fotos */
+.fotos-counter {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Botones de navegación en lightbox */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 20px;
+}
+
+.lightbox-nav-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+/* Sección de testimonio */
+.testimonio-actividades {
+  background: linear-gradient(135deg, #0a2342 0%, #0c3556 100%);
+  padding: 60px 0;
+  border-radius: 20px;
+  margin-top: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonio-actividades::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  opacity: 0.1;
+}
+
+.testimonio-content {
+  color: white;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonio-content i {
+  font-size: 3rem;
+  color: #FFC107;
+  margin-bottom: 20px;
+}
+
+.testimonio-content p {
+  font-size: 1.3rem;
+  font-style: italic;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.testimonio-author {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Elementos decorativos */
+.decorative-element {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(10, 35, 66, 0.05);
+  animation: float 8s ease-in-out infinite;
+  z-index: 1;
+}
+
+.decor-1 { width: 120px; height: 120px; top: 10%; left: 3%; }
+.decor-2 { width: 80px; height: 80px; bottom: 20%; right: 5%; animation-delay: 2s; }
+.decor-3 { width: 60px; height: 60px; top: 40%; left: 90%; animation-delay: 4s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-25px) rotate(15deg); }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .galeria-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .actividades-header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .actividades-section {
+    padding: 100px 0 60px 0;
+  }
+  
+  .actividades-header h1 {
+    font-size: 2rem;
+  }
+  
+  .filtros-list {
+    gap: 10px;
+  }
+  
+  .filtro-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .galeria-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .card-img-actividad {
+    height: 220px;
+  }
+  
+  .testimonio-content p {
+    font-size: 1.1rem;
+  }
+  
+  .lightbox-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .actividades-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .actividades-header p {
+    font-size: 1rem;
+  }
+  
+  .filtros-list {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  
+  .filtro-btn {
+    flex-shrink: 0;
+  }
+}
+
+/* Animaciones */
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ==========================================================
+     NAVBAR (MISMO QUE LAS OTRAS PÁGINAS)
+=========================================================== -->
+<header id="header" class="fixed-top">
+  <div class="container">
+    <div class="logo float-left">
+      <a href="index - copia.html"><img src="img/logo.png" class="img-fluid"></a>
+    </div>
+
+    <nav class="main-nav float-right d-none d-lg-block">
+      <ul>
+        <li><a href="index - copia.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="niveleseducativos.html">Niveles Educativos</a></li>
+        <li class="active"><a href="actividades.html">Actividades</a></li>
+        <li><a href="intranetdemo.html">Intranet</a></li>
+        <li class="drop-down"><a href="#">Más</a>
+          <ul>
+            <li><a href="#">Admisión</a></li>
+            <li class="drop-down"><a href="#">Estudiantes</a>
+              <ul>
+                <li><a href="#">Reglamento</a></li>
+                <li><a href="#">Talleres</a></li>
+                <li><a href="#">Biblioteca</a></li>
+                <li><a href="#">Calendario Escolar</a></li>
+                <li><a href="#">Consejería</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Padres de Familia</a></li>
+            <li><a href="#">Noticias</a></li>
+            <li><a href="#">Galería</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contáctanos</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!--==========================
+  GALERÍA DE ACTIVIDADES INTERACTIVA
+===========================-->
+<section class="actividades-section">
+  <div class="container">
+    
+    <!-- Elementos decorativos -->
+    <div class="decorative-element decor-1"></div>
+    <div class="decorative-element decor-2"></div>
+    <div class="decorative-element decor-3"></div>
+    
+    <!-- Encabezado -->
+    <div class="actividades-header">
+      <h1 class="wow fadeInDown" data-wow-duration="1s">Nuestras Actividades</h1>
+      <p class="wow fadeInUp" data-wow-delay="0.3s">
+        Descubre el vibrante mundo de actividades extracurriculares y eventos especiales 
+        que complementan la formación integral de nuestros estudiantes.
+      </p>
+    </div>
+    
+    <!-- Filtros de actividades -->
+    <div class="filtros-container wow fadeIn" data-wow-delay="0.5s">
+      <ul class="filtros-list">
+        <li>
+          <button class="filtro-btn active" data-filter="todas">
+            <i class="fa fa-th-large"></i> Todas
+          </button>
+        </li>
+        <li>
+          <button class="filtro-btn" data-filter="deportes">
+            <i class="fa fa-futbol-o"></i> Deportes
+          </button>
+        </li>
+        <li>
+          <button class="filtro-btn" data-filter="danzas">
+            <i class="fa fa-music"></i> Danzas
+          </button>
+        </li>
+        <li>
+          <button class="filtro-btn" data-filter="clausura">
+            <i class="fa fa-graduation-cap"></i> Clausura 2025
+          </button>
+        </li>
+        <li>
+          <button class="filtro-btn" data-filter="culturales">
+            <i class="fa fa-paint-brush"></i> Culturales
+          </button>
+        </li>
+        <li>
+          <button class="filtro-btn" data-filter="eventos">
+            <i class="fa fa-calendar"></i> Eventos Especiales
+          </button>
+        </li>
+      </ul>
+    </div>
+    
+    <!-- Galería de actividades -->
+    <div class="galeria-container">
+      <div class="galeria-grid">
+        
+        <!-- Actividad 1: Fútbol -->
+        <div class="actividad-card fade-in" data-category="deportes">
+          <div class="card-img-actividad">
+            <div class="img-overlay-actividad"></div>
+            <img src="img/deporte5.jpg " alt="Escuela de Fútbol" onerror="this.src='https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80'">
+            <div class="categoria-badge">Deportes</div>
+          </div>
+          <div class="card-content-actividad">
+            <h3>Deportes</h3>
+            <p>Desarrollamos habilidades deportivas, trabajo en equipo y disciplina. Participamos en torneos intercolegiales y promovemos valores de fair play.</p>
+            <div class="actividad-meta">
+              <div class="fecha-actividad">
+                <i class="fa fa-calendar"></i> Lunes y Miércoles
+              </div>
+              <a href="#" class="btn-ver-mas" data-gallery="futbol">Ver 5 fotos</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Actividad 2: Danzas Folklóricas -->
+        <div class="actividad-card fade-in" data-category="danzas culturales">
+          <div class="card-img-actividad">
+            <div class="img-overlay-actividad"></div>
+            <img src="img/danzas1.jpg" alt="Danzas Folklóricas" onerror="this.src='https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80'">
+            <div class="categoria-badge">Danzas</div>
+          </div>
+          <div class="card-content-actividad">
+            <h3>Danzas</h3>
+            <p>Preservamos y difundimos nuestra cultura a través de danzas tradicionales peruanas. Participación en festivales y presentaciones especiales.</p>
+            <div class="actividad-meta">
+              <div class="fecha-actividad">
+                <i class="fa fa-calendar"></i> Martes y Jueves
+              </div>
+              <a href="#" class="btn-ver-mas" data-gallery="danzas">Ver 6 fotos</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Actividad 3: Clausura 2025 -->
+        <div class="actividad-card fade-in" data-category="clausura eventos">
+          <div class="card-img-actividad">
+            <div class="img-overlay-actividad"></div>
+            <img src="img/clausura1.jpg" alt="Ceremonia de Clausura 2025" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80'">
+            <div class="categoria-badge">Evento Anual</div>
+          </div>
+          <div class="card-content-actividad">
+            <h3>Clausura 2025</h3>
+            <p>Ceremonia de clausura del año escolar 2025. Reconocimiento a méritos académicos, presentaciones especiales y despedida de nuestros graduados.</p>
+            <div class="actividad-meta">
+              <div class="fecha-actividad">
+                <i class="fa fa-calendar"></i> Diciembre 2025
+              </div>
+              <a href="#" class="btn-ver-mas" data-gallery="clausura">Ver 12 fotos</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Actividad 4: Vóley -->
+        <div class="actividad-card fade-in" data-category="deportes">
+          <div class="card-img-actividad">
+            <div class="img-overlay-actividad"></div>
+            <img src="img/actividades/voley1.jpg" alt="Equipo de Vóley" onerror="this.src='https://images.unsplash.com/photo-1599058917212-d750089bc07e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80'">
+            <div class="categoria-badge">Deportes</div>
+          </div>
+          <div class="card-content-actividad">
+            <h3>Equipo de Vóley</h3>
+            <p>Desarrollamos habilidades de vóley y participamos en competencias locales. Enfoque en trabajo en equipo y superación personal.</p>
+            <div class="actividad-meta">
+              <div class="fecha-actividad">
+                <i class="fa fa-calendar"></i> Martes y Viernes
+              </div>
+              <a href="#" class="btn-ver-mas" data-gallery="voley">Ver 4 fotos</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Actividad 5: Danzas Modernas -->
+        <div class="actividad-card fade-in" data-category="danzas">
+          <div class="card-img-actividad">
+            <div class="img-overlay-actividad"></div>
+            <img src="img/actividades/danza-moderna1.jpg" alt="Danzas Modernas" onerror="this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80'">
+            <div class="categoria-badge">Danzas</div>
+          </div>
+          <div class="card-content-actividad">
+            <h3>Danzas Modernas</h3>
+            <p>Expresión corporal a través de ritmos contemporáneos. Desarrollo de creatividad, coordinación y expresión artística.</p>
+            <div class="actividad-meta">
+              <div class="fecha-actividad">
+                <i class="fa fa-calendar"></i> Lunes y Miércoles
+              </div>
+              <a href="#" class="btn-ver-mas" data-gallery="danzas-modernas">Ver 5 fotos</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Actividad 6: Actividades de Clausura -->
+        <div class="actividad-card fade-in" data-category="clausura culturales">
+          <div class="card-img-actividad">
+            <div class="img-overlay-actividad"></div>
+            <img src="img/actividades/clausura2.jpg" alt="Actividades de Clausura" onerror="this.src='https://images.unsplash.com/photo-1524178234883-043d5c3f3cf4?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80'">
+            <div class="categoria-badge">Clausura 2025</div>
+          </div>
+          <div class="card-content-actividad">
+            <h3>Presentaciones Clausura</h3>
+            <p>Presentaciones artísticas y culturales durante la semana de clausura. Muestra del talento y aprendizaje de nuestros estudiantes.</p>
+            <div class="actividad-meta">
+              <div class="fecha-actividad">
+                <i class="fa fa-calendar"></i> Diciembre 2025
+              </div>
+              <a href="#" class="btn-ver-mas" data-gallery="clausura-presentaciones">Ver 8 fotos</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Actividad 7: Básquet -->
+        <div class="actividad-card fade-in" data-category="deportes">
+          <div class="card-img-actividad">
+            <div class="img-overlay-actividad"></div>
+            <img src="img/actividades/basquet1.jpg" alt="Equipo de Básquet" onerror="this.src='https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80'">
+            <div class="categoria-badge">Deportes</div>
+          </div>
+          <div class="card-content-actividad">
+            <h3>Equipo de Básquet</h3>
+            <p>Desarrollo de habilidades en básquetbol, estrategia de juego y condición física. Participación en ligas escolares.</p>
+            <div class="actividad-meta">
+              <div class="fecha-actividad">
+                <i class="fa fa-calendar"></i> Miércoles y Viernes
+              </div>
+              <a href="#" class="btn-ver-mas" data-gallery="basquet">Ver 4 fotos</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Actividad 8: Eventos Culturales -->
+        <div class="actividad-card fade-in" data-category="culturales eventos">
+          <div class="card-img-actividad">
+            <div class="img-overlay-actividad"></div>
+            <img src="img/actividades/cultural1.jpg" alt="Eventos Culturales" onerror="this.src='https://images.unsplash.com/photo-1492684223066-dd23140edf6d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80'">
+            <div class="categoria-badge">Cultural</div>
+          </div>
+          <div class="card-content-actividad">
+            <h3>Eventos Culturales</h3>
+            <p>Participación en festivales, concursos y presentaciones que promueven el arte y la cultura en nuestra comunidad educativa.</p>
+            <div class="actividad-meta">
+              <div class="fecha-actividad">
+                <i class="fa fa-calendar"></i> Durante todo el año
+              </div>
+              <a href="#" class="btn-ver-mas" data-gallery="culturales">Ver 7 fotos</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <!-- Sección de testimonio -->
+    <div class="testimonio-actividades wow fadeInUp" data-wow-delay="0.7s">
+      <div class="testimonio-content">
+        <i class="fa fa-quote-left"></i>
+        <p>"Las actividades extracurriculares en el Peruano Europeo han sido fundamentales para el desarrollo integral de mi hija. No solo ha mejorado académicamente, sino que ha descubierto su pasión por la danza y ha desarrollado habilidades sociales invaluables."</p>
+        <div class="testimonio-author">
+          — María González, Madre de Familia
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- Lightbox para galerías de fotos -->
+<div class="lightbox-overlay" id="lightboxOverlay">
+  <div class="lightbox-content">
+    <button class="close-lightbox">&times;</button>
+    <div class="lightbox-nav">
+      <button class="lightbox-nav-btn prev-btn"><i class="fa fa-chevron-left"></i></button>
+      <button class="lightbox-nav-btn next-btn"><i class="fa fa-chevron-right"></i></button>
+    </div>
+    <img id="lightboxImage" src="" alt="">
+    <div class="fotos-counter" id="fotosCounter">Foto 1 de 5</div>
+  </div>
+</div>
+
+<!-- ==========================================================
+     FOOTER (MISMO QUE LAS OTRAS PÁGINAS)
+=========================================================== -->
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6 footer-info">
+          <a href="#"><img src="img/logo1.png" style="max-width:150px;"></a>
+          <p>Somos una institución educativa comprometida con la formación integral.</p>
+        </div>
+
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h4>Enlaces útiles</h4>
+          <ul>
+            <li><a href="index - copia.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="#niveles">Niveles Educativos</a></li>
+            <li><a href="actividades.html">Actividades</a></li>
+            <li><a href="#">Privacidad</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-contact">
+          <h4>Contacto</h4>
+          <p>
+            Los Duraznos 267<br>
+            Tarma – Junín – Perú<br>
+            <strong>Tel:</strong> +51 996 039 217<br>
+            <strong>Email:</strong> admision@peruanoe.com<br>
+          </p>
+
+          <div class="social-links">
+            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-newsletter">
+          <h4>Boletín de Actividades</h4>
+          <p>Recibe información sobre nuestras actividades y eventos.</p>
+          <form>
+            <input type="email" placeholder="Tu correo">
+            <input type="submit" value="Suscribirme">
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container text-center">
+    © <strong>I.E.P. Peruano Europeo</strong> • Todos los derechos reservados
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<script>
+  // Inicializar animaciones
+  new WOW().init();
+  
+  // Filtrado de actividades
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filtro-btn');
+    const activityCards = document.querySelectorAll('.actividad-card');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Remover clase active de todos los botones
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Agregar clase active al botón clickeado
+        this.classList.add('active');
+        
+        const filterValue = this.getAttribute('data-filter');
+        
+        // Mostrar/ocultar tarjetas según filtro
+        activityCards.forEach(card => {
+          if (filterValue === 'todas') {
+            card.style.display = 'block';
+            setTimeout(() => {
+              card.classList.add('fade-in');
+            }, 10);
+          } else {
+            const cardCategories = card.getAttribute('data-category');
+            if (cardCategories.includes(filterValue)) {
+              card.style.display = 'block';
+              setTimeout(() => {
+                card.classList.add('fade-in');
+              }, 10);
+            } else {
+              card.classList.remove('fade-in');
+              setTimeout(() => {
+                card.style.display = 'none';
+              }, 300);
+            }
+          }
+        });
+      });
+    });
+    
+    // Lightbox para galerías de fotos
+    const lightboxOverlay = document.getElementById('lightboxOverlay');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const fotosCounter = document.getElementById('fotosCounter');
+    const closeLightbox = document.querySelector('.close-lightbox');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const viewButtons = document.querySelectorAll('.btn-ver-mas');
+    
+    // GALERÍAS CON TUS FOTOS - REEMPLAZA ESTAS RUTAS CON TUS PROPIAS FOTOS
+    const galerias = {
+      // Deportes
+      futbol: [
+        'img/deporte1.jpg',
+        'img/deporte2.jpg',
+        'img/deporte3.jpg',
+        'img/deporte4.jpg',
+        'img/deporte5.jpg',
+        'img/deporte6.jpg',
+        'img/deporte7.jpg',
+        'img/deporte8.jpg',
+        'img/deporte9.jpg',
+        'img/deporte10.jpg',
+
+      ],
+      voley: [
+        'img/actividades/voley1.jpg',
+        'img/actividades/voley2.jpg',
+        'img/actividades/voley3.jpg',
+        'img/actividades/voley4.jpg'
+      ],
+      basquet: [
+        'img/actividades/basquet1.jpg',
+        'img/actividades/basquet2.jpg',
+        'img/actividades/basquet3.jpg',
+        'img/actividades/basquet4.jpg'
+      ],
+      
+      // Danzas
+      danzas: [
+        'img/actividades/danza1.jpg',
+        'img/actividades/danza2.jpg',
+        'img/actividades/danza3.jpg',
+        'img/actividades/danza4.jpg',
+        'img/actividades/danza5.jpg',
+        'img/actividades/danza6.jpg'
+      ],
+      'danzas-modernas': [
+        'img/actividades/danza-moderna1.jpg',
+        'img/actividades/danza-moderna2.jpg',
+        'img/actividades/danza-moderna3.jpg',
+        'img/actividades/danza-moderna4.jpg',
+        'img/actividades/danza-moderna5.jpg'
+      ],
+      
+      // Clausura 2025
+      clausura: [
+        'img/actividades/clausura1.jpg',
+        'img/actividades/clausura2.jpg',
+        'img/actividades/clausura3.jpg',
+        'img/actividades/clausura4.jpg',
+        'img/actividades/clausura5.jpg',
+        'img/actividades/clausura6.jpg',
+        'img/actividades/clausura7.jpg',
+        'img/actividades/clausura8.jpg',
+        'img/actividades/clausura9.jpg',
+        'img/actividades/clausura10.jpg',
+        'img/actividades/clausura11.jpg',
+        'img/actividades/clausura12.jpg'
+      ],
+      'clausura-presentaciones': [
+        'img/actividades/clausura-presentacion1.jpg',
+        'img/actividades/clausura-presentacion2.jpg',
+        'img/actividades/clausura-presentacion3.jpg',
+        'img/actividades/clausura-presentacion4.jpg',
+        'img/actividades/clausura-presentacion5.jpg',
+        'img/actividades/clausura-presentacion6.jpg',
+        'img/actividades/clausura-presentacion7.jpg',
+        'img/actividades/clausura-presentacion8.jpg'
+      ],
+      
+      // Culturales
+      culturales: [
+        'img/actividades/cultural1.jpg',
+        'img/actividades/cultural2.jpg',
+        'img/actividades/cultural3.jpg',
+        'img/actividades/cultural4.jpg',
+        'img/actividades/cultural5.jpg',
+        'img/actividades/cultural6.jpg',
+        'img/actividades/cultural7.jpg'
+      ]
+    };
+    
+    let currentGallery = [];
+    let currentIndex = 0;
+    
+    viewButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const galleryName = this.getAttribute('data-gallery');
+        
+        // Cargar galería correspondiente
+        if (galerias[galleryName]) {
+          currentGallery = galerias[galleryName];
+          currentIndex = 0;
+          showImage(currentIndex);
+          lightboxOverlay.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+        } else {
+          // Galería por defecto si no existe
+          currentGallery = [
+            'img/actividades/default1.jpg',
+            'img/actividades/default2.jpg',
+            'img/actividades/default3.jpg'
+          ];
+          currentIndex = 0;
+          showImage(currentIndex);
+          lightboxOverlay.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+    
+    function showImage(index) {
+      if (currentGallery.length > 0 && index >= 0 && index < currentGallery.length) {
+        const img = new Image();
+        img.src = currentGallery[index];
+        img.onload = function() {
+          lightboxImage.src = currentGallery[index];
+          fotosCounter.textContent = `Foto ${index + 1} de ${currentGallery.length}`;
+        };
+        img.onerror = function() {
+          // Si la imagen no existe, mostrar imagen placeholder
+          lightboxImage.src = 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80';
+          fotosCounter.textContent = `Foto ${index + 1} de ${currentGallery.length}`;
+        };
+      }
+    }
+    
+    // Navegación de imágenes
+    nextBtn.addEventListener('click', function() {
+      if (currentGallery.length > 0) {
+        currentIndex = (currentIndex + 1) % currentGallery.length;
+        showImage(currentIndex);
+      }
+    });
+    
+    prevBtn.addEventListener('click', function() {
+      if (currentGallery.length > 0) {
+        currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+        showImage(currentIndex);
+      }
+    });
+    
+    // Navegación con teclado
+    document.addEventListener('keydown', function(e) {
+      if (lightboxOverlay.style.display === 'flex') {
+        if (e.key === 'ArrowRight') {
+          nextBtn.click();
+        } else if (e.key === 'ArrowLeft') {
+          prevBtn.click();
+        } else if (e.key === 'Escape') {
+          closeLightbox.click();
+        }
+      }
+    });
+    
+    // Cerrar lightbox
+    closeLightbox.addEventListener('click', function() {
+      lightboxOverlay.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    });
+    
+    // Cerrar haciendo clic fuera de la imagen
+    lightboxOverlay.addEventListener('click', function(e) {
+      if (e.target === lightboxOverlay) {
+        lightboxOverlay.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    });
+    
+    // Efectos hover en tarjetas
+    activityCards.forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.zIndex = '10';
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.zIndex = '1';
+      });
+    });
+    
+    // Scroll suave para navegación
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId !== '#') {
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+  });
+</script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
